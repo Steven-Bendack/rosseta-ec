@@ -3,224 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rosetta Stone ULEAM — Resolución Segura de Módulos</title>
-  <meta name="description" content="Asegura tu aprobación de inglés en Rosetta Stone (ULEAM). Resolvemos todos tus niveles y módulos con total seguridad.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><path d='M25 50 Q 50 20 75 50 Q 50 80 25 50' fill='%23facc15'/><circle cx='50' cy='50' r='14' fill='%23ffffff'/></svg>">
+  <title>Rosetta Stone ULEAM — Resolución de Cursos y Módulos</title>
+  <meta name="description" content="Resolvemos tu curso completo de Rosetta Stone para la ULEAM. Todos los niveles y módulos por $26.99. Conserva tu gratuidad sin estrés.">
+  <link rel="icon" type="image/png" href="rosetta-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: #0284c7;        /* Azul Rosetta */
-      --primary-light: #e0f2fe;  /* Celeste suave */
-      --primary-hover: #0369a1;
-      --accent: #f59e0b;         /* Amarillo/Dorado Rosetta */
-      --accent-soft: #fef3c7;
-      --bg-body: #f8fafc;
-      --bg-card: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --text-light: #94a3b8;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-      --shadow-lg: 0 12px 28px -4px rgba(2, 132, 199, 0.12), 0 8px 10px -6px rgba(0,0,0,0.04);
-      --radius-lg: 20px;
-      --radius-md: 12px;
+      --rosetta-blue: #0077c8;        /* Azul característico Rosetta */
+      --rosetta-navy: #002d62;        /* Azul oscuro institucional */
+      --rosetta-cyan: #38bdf8;        /* Celeste brillante */
+      --rosetta-sky: #e0f2fe;         /* Fondo celeste claro */
+      --rosetta-yellow: #f59e0b;      /* Amarillo detalle */
+      --rosetta-yellow-soft: #fef3c7;
+      --bg-white: #ffffff;
+      --bg-alt: #f8fafc;
+      --text-dark: #0f172a;
+      --text-gray: #475569;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-soft: 0 4px 20px -2px rgba(0, 119, 200, 0.08);
+      --shadow-hover: 0 16px 32px -4px rgba(0, 119, 200, 0.16);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      background-color: var(--bg-body);
-      color: var(--text-main);
+      background-color: var(--bg-white);
+      color: var(--text-dark);
       line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── BARRA SUPERIOR NOTICIA ── */
+    .top-announcement {
+      background: linear-gradient(90deg, var(--rosetta-navy) 0%, var(--rosetta-blue) 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .top-announcement span {
+      background: var(--rosetta-yellow);
+      color: #000;
+      padding: 0.15rem 0.6rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-right: 0.5rem;
+      display: inline-block;
     }
 
     /* ── HEADER / NAV ── */
     header {
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-color);
       z-index: 100;
     }
 
-    .nav-container {
-      max-width: 1140px;
+    .nav-wrapper {
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 0.85rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .brand-logo {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.9rem;
       text-decoration: none;
     }
 
-    .logo-badge {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
-      color: white;
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 6px rgba(0, 119, 200, 0.2));
+      transition: transform 0.25s ease;
     }
 
-    .brand-text h1 {
-      font-size: 1.25rem;
+    .brand:hover .brand-logo-img {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .brand-titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
       font-weight: 800;
-      color: #0369a1;
+      color: var(--rosetta-navy);
       letter-spacing: -0.02em;
       line-height: 1.1;
     }
 
-    .brand-text span {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #f59e0b;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    .brand-title span {
+      color: var(--rosetta-blue);
     }
 
-    .nav-menu {
+    .brand-sub {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--rosetta-yellow);
+    }
+
+    .nav-links {
       display: flex;
-      gap: 1.75rem;
+      gap: 2rem;
       list-style: none;
     }
 
-    .nav-menu a {
+    .nav-links a {
       text-decoration: none;
-      color: var(--text-muted);
+      color: var(--text-gray);
       font-size: 0.95rem;
       font-weight: 600;
       transition: color 0.2s;
     }
 
-    .nav-menu a:hover {
-      color: var(--primary);
+    .nav-links a:hover {
+      color: var(--rosetta-blue);
     }
 
-    .btn-nav {
-      background: var(--primary);
+    .btn-header-cta {
+      background: var(--rosetta-blue);
       color: #ffffff;
-      padding: 0.55rem 1.3rem;
+      padding: 0.6rem 1.4rem;
       border-radius: 50px;
       font-weight: 700;
       font-size: 0.9rem;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-      transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 119, 200, 0.25);
+      transition: all 0.2s ease;
     }
 
-    .btn-nav:hover {
-      background: var(--primary-hover);
+    .btn-header-cta:hover {
+      background: var(--rosetta-navy);
       transform: translateY(-1px);
     }
 
     /* ── HERO ── */
     .hero {
       position: relative;
-      padding: 5rem 1.5rem 4rem;
-      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 70%, var(--bg-body) 100%);
+      padding: 5rem 1.5rem 4.5rem;
+      background: linear-gradient(180deg, #f0f7fc 0%, #ffffff 75%, var(--bg-alt) 100%);
       overflow: hidden;
-      text-align: center;
     }
 
-    .hero-glow {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(2, 132, 199, 0) 70%);
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero-inner {
-      position: relative;
-      max-width: 820px;
+    .hero-container {
+      max-width: 1140px;
       margin: 0 auto;
-      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
     }
 
-    .pill-notice {
+    .hero-content {
+      text-align: left;
+    }
+
+    .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: white;
+      gap: 0.6rem;
+      background: #ffffff;
       border: 1px solid #bae6fd;
-      padding: 0.4rem 1.1rem;
+      padding: 0.45rem 1.2rem;
       border-radius: 50px;
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--primary);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 1.75rem;
+      color: var(--rosetta-blue);
+      box-shadow: 0 2px 8px rgba(0, 119, 200, 0.08);
+      margin-bottom: 1.5rem;
     }
 
-    .pill-notice span {
-      background: #0284c7;
+    .hero-pill-badge {
+      background: var(--rosetta-blue);
       color: white;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       padding: 0.2rem 0.6rem;
       border-radius: 50px;
     }
 
-    .hero h2 {
-      font-size: clamp(2.3rem, 5.5vw, 3.6rem);
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
       font-weight: 800;
-      color: #0f172a;
+      color: var(--rosetta-navy);
       line-height: 1.15;
       letter-spacing: -0.03em;
       margin-bottom: 1.25rem;
     }
 
-    .hero h2 .highlight {
-      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .hero-title .highlight-blue {
+      color: var(--rosetta-blue);
+      position: relative;
     }
 
-    .hero p {
+    .hero-desc {
       font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 2.25rem;
-      font-weight: 500;
+      color: var(--text-gray);
+      margin-bottom: 2.25rem;
       line-height: 1.7;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       gap: 1rem;
-      justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 2.5rem;
     }
 
-    .btn-main {
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    .btn-primary {
+      background: linear-gradient(135deg, var(--rosetta-blue) 0%, #0284c7 100%);
       color: #ffffff;
-      padding: 0.95rem 2.2rem;
+      padding: 1rem 2.2rem;
       border-radius: 50px;
       font-size: 1.05rem;
       font-weight: 700;
@@ -228,125 +250,203 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+      box-shadow: 0 8px 24px rgba(0, 119, 200, 0.35);
       transition: all 0.25s ease;
     }
 
-    .btn-main:hover {
+    .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(2, 132, 199, 0.45);
+      box-shadow: 0 12px 28px rgba(0, 119, 200, 0.45);
     }
 
-    .btn-outline {
+    .btn-secondary {
       background: #ffffff;
-      color: var(--text-main);
-      border: 1px solid var(--border);
-      padding: 0.95rem 2rem;
+      color: var(--rosetta-navy);
+      border: 1.5px solid var(--border-color);
+      padding: 1rem 1.8rem;
       border-radius: 50px;
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
       transition: all 0.2s ease;
     }
 
-    .btn-outline:hover {
+    .btn-secondary:hover {
       background: #f1f5f9;
       border-color: #cbd5e1;
     }
 
-    /* ── TRUST BAR ── */
-    .trust-bar {
-      max-width: 900px;
-      margin: 3.5rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid #e2e8f0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+    .hero-badges-bar {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border-color);
     }
 
-    .trust-item h4 {
-      font-size: 1.8rem;
+    .hero-stat h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
       font-weight: 800;
-      color: #0284c7;
+      color: var(--rosetta-blue);
     }
 
-    .trust-item p {
+    .hero-stat p {
       font-size: 0.85rem;
       color: var(--text-muted);
       font-weight: 600;
     }
 
-    /* ── SECTION COMMONS ── */
+    /* ── HERO IMAGE CARD (LOGO EN GRANDE) ── */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border: 1px solid #bae6fd;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-hover);
+      text-align: center;
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--rosetta-yellow);
+      color: #000000;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 0.35rem 1.1rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-logo-large {
+      height: 140px;
+      width: auto;
+      object-fit: contain;
+      margin: 1rem auto 1.5rem;
+      filter: drop-shadow(0 10px 15px rgba(0, 119, 200, 0.25));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--rosetta-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card p {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-card-tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-tag {
+      background: var(--rosetta-sky);
+      color: var(--rosetta-blue);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+    }
+
+    /* ── SECTIONS ── */
     section {
       padding: 5rem 1.5rem;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
     }
 
-    .section-header {
+    .section-head {
       text-align: center;
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 3.5rem;
     }
 
-    .section-tag {
-      font-size: 0.8rem;
+    .section-eyebrow {
+      font-size: 0.82rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #0284c7;
+      letter-spacing: 0.12em;
+      color: var(--rosetta-blue);
       margin-bottom: 0.5rem;
       display: inline-block;
     }
 
-    .section-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    .section-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 3.8vw, 2.7rem);
       font-weight: 800;
-      color: #0f172a;
+      color: var(--rosetta-navy);
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
     }
 
     .section-subtitle {
-      font-size: 1rem;
-      color: var(--text-muted);
+      font-size: 1.05rem;
+      color: var(--text-gray);
     }
 
     /* ── HOW IT WORKS ── */
-    .steps-grid {
+    .steps-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.75rem;
     }
 
-    .step-card {
+    .step-box {
       background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      position: relative;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-soft);
+      position: relative;
     }
 
-    .step-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+    .step-box:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
       border-color: #bae6fd;
     }
 
-    .step-badge {
+    .step-number {
       width: 48px;
       height: 48px;
-      background: var(--primary-light);
-      color: var(--primary);
+      background: linear-gradient(135deg, var(--rosetta-sky) 0%, #bae6fd 100%);
+      color: var(--rosetta-blue);
       border-radius: 14px;
-      font-size: 1.25rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -354,347 +454,368 @@
       margin-bottom: 1.25rem;
     }
 
-    .step-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0f172a;
+    .step-box h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--rosetta-navy);
       margin-bottom: 0.6rem;
     }
 
-    .step-card p {
+    .step-box p {
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: var(--text-gray);
       line-height: 1.6;
     }
 
-    /* ── LEVELS COVERED ── */
-    .levels-container {
+    /* ── LEVELS INCLUDED ── */
+    .levels-card-wrap {
       background: #ffffff;
-      border: 1px solid var(--border);
+      border: 1.5px solid #e0f2fe;
       border-radius: 28px;
-      padding: 3rem 2rem;
-      box-shadow: var(--shadow-sm);
+      padding: 3.5rem 2.5rem;
+      box-shadow: var(--shadow-soft);
     }
 
     .levels-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.25rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
-    .level-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 1.5rem;
+    .level-item {
+      background: var(--bg-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.25rem;
       text-align: center;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
     }
 
-    .level-box:hover {
+    .level-item:hover {
       background: #f0f9ff;
       border-color: #7dd3fc;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    .level-tag {
+    .level-item-badge {
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--rosetta-blue);
       background: white;
-      border: 1px solid #e0f2fe;
-      padding: 0.2rem 0.6rem;
+      border: 1px solid #bae6fd;
+      padding: 0.25rem 0.75rem;
       border-radius: 50px;
       display: inline-block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
-    .level-box h4 {
-      font-size: 1.25rem;
+    .level-item h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
       font-weight: 800;
-      color: #0f172a;
+      color: var(--rosetta-navy);
     }
 
-    .level-box p {
+    .level-item p {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: var(--text-gray);
       margin-top: 0.25rem;
     }
 
     /* ── PRICING CARD ── */
-    .pricing-wrap {
-      max-width: 520px;
+    .pricing-container {
+      max-width: 540px;
       margin: 0 auto;
       background: #ffffff;
-      border: 2px solid #0284c7;
+      border: 2px solid var(--rosetta-blue);
       border-radius: 28px;
-      padding: 3.5rem 2.5rem;
-      box-shadow: var(--shadow-lg);
+      padding: 3.5rem 2.75rem;
+      box-shadow: var(--shadow-hover);
       text-align: center;
       position: relative;
     }
 
-    .pricing-popular-badge {
+    .pricing-badge-top {
       position: absolute;
       top: -15px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      background: linear-gradient(135deg, var(--rosetta-blue) 0%, var(--rosetta-navy) 100%);
       color: white;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 800;
-      padding: 0.4rem 1.25rem;
+      padding: 0.4rem 1.4rem;
       border-radius: 50px;
-      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 119, 200, 0.3);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .pricing-header h3 {
-      font-size: 1.4rem;
+    .pricing-container h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
       font-weight: 800;
-      color: #0f172a;
+      color: var(--rosetta-navy);
     }
 
-    .pricing-header p {
+    .pricing-container .pricing-sub {
       font-size: 0.95rem;
       color: var(--text-muted);
       margin-top: 0.25rem;
     }
 
-    .price-value {
+    .pricing-amount-block {
       margin: 1.75rem 0 0.5rem;
       display: flex;
       align-items: baseline;
       justify-content: center;
-      gap: 0.2rem;
+      gap: 0.25rem;
     }
 
-    .price-currency {
-      font-size: 2rem;
+    .price-sym {
+      font-size: 2.2rem;
       font-weight: 800;
-      color: #0369a1;
+      color: var(--rosetta-blue);
     }
 
-    .price-amount {
-      font-size: 4rem;
+    .price-main {
+      font-family: 'Outfit', sans-serif;
+      font-size: 4.2rem;
       font-weight: 800;
-      color: #0369a1;
+      color: var(--rosetta-navy);
       line-height: 1;
     }
 
-    .price-cents {
-      font-size: 1.8rem;
+    .price-dec {
+      font-size: 2rem;
       font-weight: 800;
-      color: #0369a1;
+      color: var(--rosetta-blue);
     }
 
-    .price-label {
+    .price-total-tag {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--text-muted);
+      color: var(--text-gray);
       margin-bottom: 2rem;
     }
 
-    .pricing-features {
+    .features-list {
       list-style: none;
       text-align: left;
       margin-bottom: 2rem;
     }
 
-    .pricing-features li {
+    .features-list li {
       padding: 0.75rem 0;
       border-bottom: 1px solid #f1f5f9;
       display: flex;
       align-items: center;
       gap: 0.75rem;
       font-size: 0.95rem;
-      color: var(--text-main);
+      color: var(--text-dark);
       font-weight: 500;
     }
 
-    .check-icon {
-      width: 20px;
-      height: 20px;
-      background: #e0f2fe;
-      color: #0284c7;
+    .check-bullet {
+      width: 22px;
+      height: 22px;
+      background: var(--rosetta-sky);
+      color: var(--rosetta-blue);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 800;
       flex-shrink: 0;
     }
 
-    .payment-notice {
-      background: #fefce8;
-      border: 1px solid #fef08a;
-      border-radius: 16px;
+    .pricing-highlight-box {
+      background: #fffbeb;
+      border: 1.5px solid #fde68a;
+      border-radius: var(--radius-lg);
       padding: 1.25rem;
       margin-bottom: 2rem;
       text-align: left;
     }
 
-    .payment-notice h5 {
-      color: #854d0e;
+    .pricing-highlight-box h5 {
+      color: #92400e;
       font-size: 0.95rem;
-      font-weight: 700;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 0.4rem;
       margin-bottom: 0.35rem;
     }
 
-    .payment-notice p {
-      font-size: 0.85rem;
-      color: #713f12;
+    .pricing-highlight-box p {
+      font-size: 0.88rem;
+      color: #78350f;
       line-height: 1.5;
     }
 
-    /* ── COMPARISON TABLE ── */
-    .comparison-grid {
+    /* ── COMPARISON ── */
+    .comparison-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      max-width: 850px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    .comp-card {
-      border-radius: var(--radius-lg);
-      padding: 2.25rem;
-      box-shadow: var(--shadow-sm);
+    .comp-box {
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-soft);
     }
 
-    .comp-bad {
-      background: #fff;
-      border: 1px solid #fecdd3;
+    .comp-danger {
+      background: #ffffff;
+      border: 1.5px solid #fecdd3;
     }
 
-    .comp-bad h4 {
+    .comp-danger h4 {
+      font-family: 'Outfit', sans-serif;
       color: #e11d48;
-      font-size: 1.15rem;
+      font-size: 1.3rem;
       font-weight: 800;
       margin-bottom: 1.25rem;
     }
 
-    .comp-good {
+    .comp-success {
       background: #f0fdf4;
       border: 2px solid #86efac;
     }
 
-    .comp-good h4 {
+    .comp-success h4 {
+      font-family: 'Outfit', sans-serif;
       color: #15803d;
-      font-size: 1.15rem;
+      font-size: 1.3rem;
       font-weight: 800;
       margin-bottom: 1.25rem;
     }
 
-    .comp-list {
+    .comp-items {
       list-style: none;
     }
 
-    .comp-list li {
+    .comp-items li {
       font-size: 0.95rem;
-      padding: 0.5rem 0;
-      color: var(--text-muted);
+      padding: 0.55rem 0;
+      color: var(--text-gray);
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
     /* ── FAQ ── */
-    .faq-container {
-      max-width: 760px;
+    .faq-wrapper {
+      max-width: 780px;
       margin: 0 auto;
     }
 
-    .faq-item {
+    .faq-card {
       background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
       margin-bottom: 1rem;
       overflow: hidden;
       transition: all 0.2s;
     }
 
-    .faq-item:hover {
+    .faq-card:hover {
       border-color: #cbd5e1;
     }
 
-    .faq-btn {
+    .faq-trigger {
       width: 100%;
       background: none;
       border: none;
-      padding: 1.25rem 1.5rem;
+      padding: 1.35rem 1.6rem;
       text-align: left;
-      font-size: 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--text-main);
+      color: var(--rosetta-navy);
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
     }
 
-    .faq-btn:hover {
-      color: var(--primary);
+    .faq-trigger:hover {
+      color: var(--rosetta-blue);
     }
 
-    .faq-chevron {
+    .faq-arrow {
       font-size: 1.2rem;
-      color: var(--text-light);
+      color: var(--text-muted);
       transition: transform 0.3s ease;
     }
 
-    .faq-item.active .faq-chevron {
+    .faq-card.open .faq-arrow {
       transform: rotate(180deg);
-      color: var(--primary);
+      color: var(--rosetta-blue);
     }
 
-    .faq-content {
+    .faq-body {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
       background: #f8fafc;
     }
 
-    .faq-content p {
-      padding: 1.25rem 1.5rem;
+    .faq-body p {
+      padding: 1.35rem 1.6rem;
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: var(--text-gray);
       line-height: 1.7;
     }
 
-    /* ── FOOTER & FINAL CTA ── */
-    .cta-banner {
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      border-radius: 28px;
-      padding: 4rem 2rem;
+    /* ── FINAL BANNER ── */
+    .cta-banner-wrap {
+      background: linear-gradient(135deg, var(--rosetta-navy) 0%, var(--rosetta-blue) 100%);
+      border-radius: 32px;
+      padding: 4.5rem 2.5rem;
       text-align: center;
       color: white;
-      box-shadow: 0 16px 36px rgba(2, 132, 199, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 119, 200, 0.25);
+      position: relative;
+      overflow: hidden;
     }
 
-    .cta-banner h3 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
+    .cta-banner-wrap::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-banner-wrap h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.1rem, 4.5vw, 3rem);
       font-weight: 800;
       margin-bottom: 1rem;
     }
 
-    .cta-banner p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      max-width: 600px;
+    .cta-banner-wrap p {
+      font-size: 1.15rem;
+      opacity: 0.92;
+      max-width: 620px;
       margin: 0 auto 2.5rem;
     }
 
-    .btn-white {
+    .btn-cta-white {
       background: #ffffff;
-      color: #0369a1;
-      padding: 1rem 2.4rem;
+      color: var(--rosetta-navy);
+      padding: 1.1rem 2.6rem;
       border-radius: 50px;
       font-size: 1.1rem;
       font-weight: 800;
@@ -702,46 +823,60 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: all 0.25s ease;
     }
 
-    .btn-white:hover {
+    .btn-cta-white:hover {
       background: #f8fafc;
       transform: translateY(-2px);
     }
 
+    /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--border-color);
       background: #ffffff;
-      padding: 3rem 1.5rem;
+      padding: 3.5rem 1.5rem;
       text-align: center;
       color: var(--text-muted);
       font-size: 0.9rem;
     }
 
-    .footer-links {
-      margin-top: 1rem;
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .footer-links-list {
+      margin-top: 1.25rem;
       display: flex;
       justify-content: center;
       gap: 1.5rem;
     }
 
-    .footer-links a {
-      color: var(--primary);
+    .footer-links-list a {
+      color: var(--rosetta-blue);
       text-decoration: none;
       font-weight: 600;
     }
 
-    /* ── WHATSAPP FLOAT BUTTON ── */
-    .wa-sticky {
+    /* ── BOTON FLOTANTE WHATSAPP ── */
+    .whatsapp-float-btn {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
       background: #25d366;
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -752,43 +887,49 @@
       text-decoration: none;
     }
 
-    .wa-sticky:hover {
+    .whatsapp-float-btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
     }
 
-    @media (max-width: 768px) {
-      .nav-menu { display: none; }
-      .trust-bar { grid-template-columns: 1fr; gap: 1rem; }
-      .hero { padding: 3.5rem 1rem 3rem; }
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+      .hero-content { text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-badges-bar { justify-content: center; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
+  <!-- ANNOUNCEMENT -->
+  <div class="top-announcement">
+    <span>OFERTA SEMESTRE 2026</span> Te resolvemos todos tus niveles asignados de Rosetta Stone antes del cierre de plataforma
+  </div>
+
   <!-- HEADER -->
   <header>
-    <div class="nav-container">
-      <a href="#" class="brand-logo">
-        <div class="logo-badge">
-          <!-- Rosetta Stone Style Arch Icon -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 19V9C4 5.68629 6.68629 3 10 3H14C17.3137 3 20 5.68629 20 9V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19Z" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M9 12L11 14L15 10" stroke="#fef08a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <h1>RosettaEC</h1>
-          <span>Apoyo Estudiantil ULEAM</span>
+    <div class="nav-wrapper">
+      <a href="#" class="brand">
+        <!-- Logo Oficial de Rosetta Stone -->
+        <img src="rosetta-logo.png" alt="Logo Rosetta Stone" class="brand-logo-img">
+        <div class="brand-titles">
+          <div class="brand-title">Rosetta<span>EC</span></div>
+          <div class="brand-sub">Apoyo Universitario ULEAM</div>
         </div>
       </a>
-      <ul class="nav-menu">
+      <ul class="nav-links">
         <li><a href="#proceso">¿Cómo funciona?</a></li>
         <li><a href="#niveles">Niveles</a></li>
         <li><a href="#precio">Precios</a></li>
-        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a href="#faq">Preguntas</a></li>
       </ul>
-      <a href="https://wa.me/593984343514?text=Hola%2C+necesito+ayuda+con+mi+curso+de+Rosetta+Stone" class="btn-nav" target="_blank">
+      <a href="https://wa.me/593984343514?text=Hola%2C+necesito+ayuda+con+mi+curso+de+Rosetta+Stone" class="btn-header-cta" target="_blank">
         WhatsApp Asesor
       </a>
     </div>
@@ -796,34 +937,54 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-inner">
-      <div class="pill-notice">
-        <span>Nuevo Ciclo 2026</span> Cupos Abiertos para ULEAM y Universidades
-      </div>
-      <h2>Asegura tu aprobación de <span class="highlight">Rosetta Stone</span> sin estrés</h2>
-      <p>Resolvemos todos tus módulos, unidades y actividades de inglés nivel por nivel. Aprobación 100% garantizada para que conserves tu gratuidad y no pierdas tiempo frente a la pantalla.</p>
-      
-      <div class="hero-buttons">
-        <a href="https://wa.me/593984343514?text=Hola%2C+quiero+cotizar+mi+curso+de+Rosetta+Stone" class="btn-main" target="_blank">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Solicitar Ayuda por WhatsApp
-        </a>
-        <a href="#proceso" class="btn-outline">Conocer el Proceso</a>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span class="hero-pill-badge">Garantizado</span> Aprobación 100% de Horas y Módulos
+        </div>
+        <h2 class="hero-title">
+          Resolvemos tu curso de <span class="highlight-blue">Rosetta Stone</span> por ti
+        </h2>
+        <p class="hero-desc">
+          Somos un grupo independiente de apoyo entre universitarios de la ULEAM. Hacemos todas tus tareas, horas de plataforma y evaluaciones nivel por nivel en tiempo récord. Tú solo envías tu reporte y pasas seguro.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/593984343514?text=Hola%2C+quiero+cotizar+mi+curso+de+Rosetta+Stone" class="btn-primary" target="_blank">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+          <a href="#proceso" class="btn-secondary">Ver cómo funciona</a>
+        </div>
+
+        <div class="hero-badges-bar">
+          <div class="hero-stat">
+            <h4>1,200+</h4>
+            <p>Alumnos Aprobados</p>
+          </div>
+          <div class="hero-stat">
+            <h4>< 3 Días</h4>
+            <p>Por Nivel Completo</p>
+          </div>
+          <div class="hero-stat">
+            <h4>100%</h4>
+            <p>Privado y Seguro</p>
+          </div>
+        </div>
       </div>
 
-      <div class="trust-bar">
-        <div class="trust-item">
-          <h4>1,200+</h4>
-          <p>Estudiantes Aprobados</p>
-        </div>
-        <div class="trust-item">
-          <h4>< 3 Días</h4>
-          <p>Entrega Rápida por Nivel</p>
-        </div>
-        <div class="trust-item">
-          <h4>100%</h4>
-          <p>Privacidad y Seguridad</p>
+      <!-- CARD LATERAL CON EL LOGO OFICIAL -->
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-badge">Soporte Integral</div>
+          <img src="rosetta-logo.png" alt="Rosetta Stone Logo Oficial" class="hero-logo-large">
+          <h3>Rosetta Stone® ULEAM</h3>
+          <p>Módulos, evaluaciones orales, gramática y horas validadas con precisión académica.</p>
+          <div class="hero-card-tags">
+            <span class="hero-tag">Nivel A1 & A2</span>
+            <span class="hero-tag">Nivel B1 & B2</span>
+            <span class="hero-tag">Focused Skills</span>
+          </div>
         </div>
       </div>
     </div>
@@ -832,75 +993,75 @@
   <!-- HOW IT WORKS -->
   <section id="proceso">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Paso a Paso</span>
-        <h2 class="section-title">¿Cómo trabajamos tu cuenta?</h2>
-        <p class="section-subtitle">Un flujo totalmente seguro, transparente y sin riesgos para tu récord académico.</p>
+      <div class="section-head">
+        <span class="section-eyebrow">Metodología</span>
+        <h2 class="section-heading">¿Cómo funciona el servicio?</h2>
+        <p class="section-subtitle">Un proceso claro, seguro y por etapas para que compruebes tu avance sin riesgos.</p>
       </div>
 
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-badge">1</div>
+      <div class="steps-wrapper">
+        <div class="step-box">
+          <div class="step-number">1</div>
           <h3>Nos escribes</h3>
-          <p>Contáctanos por WhatsApp indicándonos tu facultad, qué nivel estás cursando y tu fecha límite.</p>
+          <p>Contáctanos por WhatsApp indicando qué nivel estás cursando en la ULEAM y cuánto te falta para terminar.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-badge">2</div>
+        <div class="step-box">
+          <div class="step-number">2</div>
           <h3>Acceso Seguro</h3>
-          <p>Nos compartes tus credenciales de la plataforma institucional. Trabajamos de forma discreta e individual.</p>
+          <p>Nos compartes tus credenciales de Rosetta. Ingresamos de manera individual y discreta a resolver tus lecciones.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-badge">3</div>
-          <h3>Resolución por Etapas</h3>
-          <p>Completamos cada unidad al 100% en menos de 72 horas. Verificas tu avance directamente en tu panel.</p>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <h3>Entrega por Etapas</h3>
+          <p>Completamos cada nivel (25 módulos) en menos de 3 días. Verificas tu avance directamente en tu plataforma.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-badge">4</div>
-          <h3>Certificado y Pase</h3>
-          <p>Una vez completado el nivel, envías el reporte a secretaría o coordinación para registrar tu aprobación.</p>
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <h3>Pase Garantizado</h3>
+          <p>Descargas tu reporte de horas y notas para secretaría. ¡Nivel superado y gratuidad universitaria protegida!</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COVERAGE -->
-  <section id="niveles" style="background-color: #f1f5f9;">
+  <!-- LEVELS -->
+  <section id="niveles" style="background-color: var(--bg-alt);">
     <div class="container">
-      <div class="levels-container">
-        <div class="section-header" style="margin-bottom: 2rem;">
-          <span class="section-tag">Cobertura Total</span>
-          <h2 class="section-title">Todos los niveles y módulos incluidos</h2>
-          <p class="section-subtitle">No cobramos por módulo separado. Tu pago cubre la totalidad de lo que necesites completar.</p>
+      <div class="levels-card-wrap">
+        <div class="section-head" style="margin-bottom: 2rem;">
+          <span class="section-eyebrow">Cobertura Universitaria</span>
+          <h2 class="section-heading">Todos los niveles incluidos en un solo pago</h2>
+          <p class="section-subtitle">No cobramos por módulo suelto ni sorpresas. Todo tu programa queda cubierto.</p>
         </div>
 
         <div class="levels-grid">
-          <div class="level-box">
-            <span class="level-tag">Básico</span>
+          <div class="level-item">
+            <span class="level-item-badge">Básico</span>
             <h4>Nivel A1</h4>
-            <p>25 Módulos Completos</p>
+            <p>25 Módulos y Tareas</p>
           </div>
-          <div class="level-box">
-            <span class="level-tag">Elemental</span>
+          <div class="level-item">
+            <span class="level-item-badge">Elemental</span>
             <h4>Nivel A2</h4>
-            <p>25 Módulos Completos</p>
+            <p>25 Módulos y Tareas</p>
           </div>
-          <div class="level-box">
-            <span class="level-tag">Intermedio</span>
+          <div class="level-item">
+            <span class="level-item-badge">Intermedio</span>
             <h4>Nivel B1</h4>
-            <p>Grammar & Speaking</p>
+            <p>25 Módulos y Tareas</p>
           </div>
-          <div class="level-box">
-            <span class="level-tag">Avanzado</span>
+          <div class="level-item">
+            <span class="level-item-badge">Avanzado</span>
             <h4>Nivel B2</h4>
-            <p>Horas y Evaluaciones</p>
+            <p>Evaluaciones y Horas</p>
           </div>
-          <div class="level-box">
-            <span class="level-tag">Especial</span>
+          <div class="level-item">
+            <span class="level-item-badge">Especial</span>
             <h4>Focused Skills</h4>
-            <p>Speaking & Listening</p>
+            <p>Grammar & Pronunciation</p>
           </div>
         </div>
       </div>
@@ -910,89 +1071,89 @@
   <!-- PRICING -->
   <section id="precio">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Tarifa Clara</span>
-        <h2 class="section-title">Inversión única y accesible</h2>
-        <p class="section-subtitle">Evita el cobro de aranceles universitarios que superan los $140 por pérdida de gratuidad.</p>
+      <div class="section-head">
+        <span class="section-eyebrow">Tarifa Transparente</span>
+        <h2 class="section-heading">Una sola inversión para todo tu curso</h2>
+        <p class="section-subtitle">Evita pagar más de $140 en aranceles universitarios por reprobar la materia.</p>
       </div>
 
-      <div class="pricing-wrap">
-        <div class="pricing-popular-badge">Garantía de Aprobación</div>
-        <div class="pricing-header">
-          <h3>Curso Completo de Rosetta</h3>
-          <p>Todos los niveles que tengas asignados</p>
-        </div>
+      <div class="pricing-container">
+        <div class="pricing-badge-top">Curso Completo Garantizado</div>
+        <h3>Todos tus Niveles Asignados</h3>
+        <p class="pricing-sub">De principio a fin sin costos adicionales</p>
 
-        <div class="price-value">
-          <span class="price-currency">$</span>
-          <span class="price-amount">26</span>
-          <span class="price-cents">.99</span>
+        <div class="pricing-amount-block">
+          <span class="price-sym">$</span>
+          <span class="price-main">26</span>
+          <span class="price-dec">.99</span>
         </div>
-        <div class="price-label">Pago único total por todo el proceso</div>
+        <div class="price-total-tag">Pago total por todo el curso (no es por nivel)</div>
 
-        <ul class="pricing-features">
+        <ul class="features-list">
           <li>
-            <div class="check-icon">✓</div>
-            <span>Resolución de todos tus niveles (A1, A2, B1 o B2)</span>
+            <div class="check-bullet">✓</div>
+            <span>Resolución de todos tus niveles asignados (A1, A2, B1, B2)</span>
           </li>
           <li>
-            <div class="check-icon">✓</div>
-            <span>Cumplimiento del 100% de horas y unidades</span>
+            <div class="check-bullet">✓</div>
+            <span>Cumplimiento del 100% de horas de plataforma</span>
           </li>
           <li>
-            <div class="check-icon">✓</div>
-            <span>Focused Skills (Grammar, Pronunciation, Listening)</span>
+            <div class="check-bullet">✓</div>
+            <span>Focused Skills incluidos (Gramática, Escucha, Habla)</span>
           </li>
           <li>
-            <div class="check-icon">✓</div>
-            <span>Entrega ágil en menos de 3 días por nivel</span>
+            <div class="check-bullet">✓</div>
+            <span>Entrega ultra rápida en menos de 72 horas por nivel</span>
           </li>
           <li>
-            <div class="check-icon">✓</div>
-            <span>Atención personalizada vía WhatsApp</span>
+            <div class="check-bullet">✓</div>
+            <span>Transferencia bancaria directa a Banco Pichincha</span>
           </li>
         </ul>
 
-        <div class="payment-notice">
+        <div class="pricing-highlight-box">
           <h5>💡 Facilidad de Pago: Mitad y Mitad</h5>
-          <p>Empieza pagando solo la mitad. Te dejamos listo y validado el <strong>A1</strong> para tu tranquilidad, y abonas el saldo restante para continuar. Puedes ajustarlo hasta en <strong>$21</strong> si realizas el pago de parte en parte.</p>
+          <p>
+            Pagas la mitad al inicio para comenzar. Te completamos y verificamos todo el <strong>Nivel A1</strong> para que compruebes la calidad de nuestro trabajo, y luego abonas la otra mitad. Si pagas de parte en parte, se te puede dejar hasta en <strong>$21</strong>.
+          </p>
         </div>
 
-        <a href="https://wa.me/593984343514?text=Hola%2C+quiero+contratar+el+servicio+completo+de+Rosetta" class="btn-main" style="width: 100%; justify-content: center;" target="_blank">
-          Empezar Ahora por WhatsApp
+        <a href="https://wa.me/593984343514?text=Hola%2C+quiero+contratar+el+servicio+de+Rosetta+Stone" class="btn-primary" style="width: 100%; justify-content: center;" target="_blank">
+          Contratar Ahora por WhatsApp
         </a>
       </div>
     </div>
   </section>
 
   <!-- COMPARISON -->
-  <section style="background-color: #f8fafc;">
+  <section style="background-color: var(--bg-alt);">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Comparativa</span>
-        <h2 class="section-title">¿Por qué conviene nuestro servicio?</h2>
+      <div class="section-head">
+        <span class="section-eyebrow">Comparativa Real</span>
+        <h2 class="section-heading">¿Por qué te conviene asegurar tu curso?</h2>
       </div>
 
-      <div class="comparison-grid">
-        <div class="comp-card comp-bad">
+      <div class="comparison-wrapper">
+        <div class="comp-box comp-danger">
           <h4>❌ Sin el Servicio</h4>
-          <ul class="comp-list">
-            <li>• Más de 60 horas frente a la computadora</li>
-            <li>• Riesgo de reprobar por falta de tiempo</li>
-            <li>• Pérdida de gratuidad universitaria</li>
-            <li>• Pago de aranceles de más de $140 a la U</li>
-            <li>• Estrés acumulado al final del semestre</li>
+          <ul class="comp-items">
+            <li>• Más de 60 horas de tediosas lecciones frente a la pantalla</li>
+            <li>• Riesgo de atrasarte con tus materias principales de carrera</li>
+            <li>• Pérdida irreversible de la gratuidad universitaria</li>
+            <li>• Cobro de aranceles de más de $140 por repetición en la U</li>
+            <li>• Estrés al final de semestre por fechas límite de entrega</li>
           </ul>
         </div>
 
-        <div class="comp-card comp-good">
+        <div class="comp-box comp-success">
           <h4>✅ Con RosettaEC</h4>
-          <ul class="comp-list">
-            <li>• Tu tiempo 100% libre para otras materias</li>
-            <li>• Avance impecable en menos de 72 horas</li>
-            <li>• Cero riesgo de perder la gratuidad</li>
-            <li>• Ahorro de más de $110 frente a reprobar</li>
-            <li>• Facilidad de pago mitad y mitad</li>
+          <ul class="comp-items">
+            <li>• Tiempo 100% libre para tus exámenes y proyectos</li>
+            <li>• Avance verificado de 25 módulos en menos de 3 días</li>
+            <li>• Tu gratuidad universitaria queda completamente segura</li>
+            <li>• Solo $26.99 en total (ahorro de más de $110)</li>
+            <li>• Facilidad de pago en partes con total garantía</li>
           </ul>
         </div>
       </div>
@@ -1000,65 +1161,66 @@
   </section>
 
   <!-- FAQ -->
-  <section id="preguntas">
+  <section id="faq">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Dudas Frecuentes</span>
-        <h2 class="section-title">Preguntas Comunes</h2>
+      <div class="section-head">
+        <span class="section-eyebrow">Preguntas Frecuentes</span>
+        <h2 class="section-heading">Todo lo que necesitas saber</h2>
       </div>
 
-      <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-btn">
-            <span>¿Quiénes son y cómo garantizan el trabajo?</span>
-            <span class="faq-chevron">▼</span>
+      <div class="faq-wrapper">
+        <div class="faq-card">
+          <button class="faq-trigger">
+            <span>¿Quiénes son ustedes y qué relación tienen con la U?</span>
+            <span class="faq-arrow">▼</span>
           </button>
-          <div class="faq-content">
-            <p>Somos un equipo de soporte entre estudiantes universitarios. Trabajamos directamente en la plataforma oficial de Rosetta Stone completando cada lección requerida por el temario, asegurando que tus porcentajes y horas queden registrados con exactitud.</p>
+          <div class="faq-body">
+            <p>Somos un grupo independiente de apoyo entre universitarios de la ULEAM. No somos la universidad ni Rosetta Stone oficial. El curso de idiomas que imparte la universidad es gratuito; lo que cobramos ($26.99) es por el tiempo y dedicación de nuestro equipo en resolver todas las lecciones y módulos por ti en la plataforma.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-btn">
-            <span>¿Qué métodos de pago tienen disponibles?</span>
-            <span class="faq-chevron">▼</span>
+        <div class="faq-card">
+          <button class="faq-trigger">
+            <span>¿Es seguro compartir mis accesos de Rosetta?</span>
+            <span class="faq-arrow">▼</span>
           </button>
-          <div class="faq-content">
-            <p>Aceptamos transferencias directas y depósitos a través de Banco Pichincha. Manejamos el esquema de pago mitad y mitad para que compruebes los avances de tu primer nivel antes de completar el saldo.</p>
+          <div class="faq-body">
+            <p>Totalmente seguro. Solo ingresamos directamente a la plataforma de Rosetta Stone para cumplir las tareas. No solicitamos ni manipulamos tu correo personal, contraseñas de SGA ni ningún otro servicio universitario sensible.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-btn">
-            <span>¿Cuánto tardan en completar un nivel?</span>
-            <span class="faq-chevron">▼</span>
+        <div class="faq-card">
+          <button class="faq-trigger">
+            <span>¿Cómo se realiza el pago por transferencia?</span>
+            <span class="faq-arrow">▼</span>
           </button>
-          <div class="faq-content">
-            <p>Un nivel completo de 25 módulos toma menos de 3 días en quedar al 100%. Te notificamos de inmediato para que descargues tu reporte de calificaciones y lo envíes a tu docente o instituto de idiomas.</p>
+          <div class="faq-body">
+            <p>El pago se realiza mediante transferencia o depósito a nuestra cuenta de ahorros de Banco Pichincha. Manejamos el esquema de mitad y mitad: abonas la mitad, completamos y validamos tu A1, y abonas el restante para culminar los demás niveles asignados.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-btn">
-            <span>¿Mis datos institucionales están seguros?</span>
-            <span class="faq-chevron">▼</span>
+        <div class="faq-card">
+          <button class="faq-trigger">
+            <span>¿Cuánto tiempo toma tener todo el curso listo?</span>
+            <span class="faq-arrow">▼</span>
           </button>
-          <div class="faq-content">
-            <p>Absolutamente. Tus accesos solo se utilizan para ingresar a las tareas de Rosetta Stone. No tocamos tu correo personal, SGA ni ningún otro sistema interno de la universidad.</p>
+          <div class="faq-body">
+            <p>Cada nivel completo (sus 25 módulos correspondientes) se resuelve en menos de 72 horas. Te avisamos de inmediato para que descargues tu certificado y lo envíes a tu docente o instituto de idiomas.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
+  <!-- CTA FINAL -->
   <section style="padding-top: 0;">
     <div class="container">
-      <div class="cta-banner">
-        <h3>¿Listo para liberarte de Rosetta?</h3>
-        <p>Escríbenos hoy mismo y empieza tu ciclo con la tranquilidad de tener el inglés aprobado.</p>
-        <a href="https://wa.me/593984343514?text=Hola%2C+quiero+empezar+mi+curso+de+Rosetta" class="btn-white" target="_blank">
-          Contactar por WhatsApp
+      <div class="cta-banner-wrap">
+        <h3>¿Listo para liberarte de Rosetta Stone?</h3>
+        <p>Escríbenos hoy por WhatsApp y resolvemos tu primer nivel en menos de 3 días con garantía total.</p>
+        <a href="https://wa.me/593984343514?text=Hola%2C+quiero+resolver+mi+curso+de+Rosetta+Stone" class="btn-cta-white" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Hablar con un Asesor
         </a>
       </div>
     </div>
@@ -1067,37 +1229,41 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
+      <div class="footer-brand">
+        <img src="rosetta-logo.png" alt="Rosetta Stone Logo" class="footer-logo">
+        <strong style="color: var(--rosetta-navy); font-size: 1.1rem;">RosettaEC</strong>
+      </div>
       <p>© 2026 RosettaEC — Soporte Estudiantil Universitario (ULEAM / Manabí)</p>
-      <div class="footer-links">
+      <div class="footer-links-list">
         <a href="https://www.instagram.com/rossetaec/" target="_blank">Instagram Oficial @rossetaec</a>
-        <a href="https://wa.me/593984343514" target="_blank">Línea Directa WhatsApp</a>
+        <a href="https://wa.me/593984343514" target="_blank">WhatsApp Directo (+593 98 434 3514)</a>
       </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/593984343514?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Rosetta" class="wa-sticky" target="_blank" title="WhatsApp Asesor">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <a href="https://wa.me/593984343514?text=Hola%2C+quiero+informaci%C3%B3n+sobre+el+servicio+de+Rosetta" class="whatsapp-float-btn" target="_blank" title="Escríbenos por WhatsApp">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
 
-  <!-- SCRIPTS -->
+  <!-- SCRIPTS INTERACTIVOS -->
   <script>
-    document.querySelectorAll('.faq-btn').forEach(button => {
+    document.querySelectorAll('.faq-trigger').forEach(button => {
       button.addEventListener('click', () => {
-        const item = button.parentElement;
-        const content = item.querySelector('.faq-content');
-        const isActive = item.classList.contains('active');
+        const card = button.parentElement;
+        const body = card.querySelector('.faq-body');
+        const isOpen = card.classList.contains('open');
 
-        document.querySelectorAll('.faq-item').forEach(i => {
-          i.classList.remove('active');
-          i.querySelector('.faq-content').style.maxHeight = null;
+        document.querySelectorAll('.faq-card').forEach(c => {
+          c.classList.remove('open');
+          c.querySelector('.faq-body').style.maxHeight = null;
         });
 
-        if (!isActive) {
-          item.classList.add('active');
-          content.style.maxHeight = content.scrollHeight + 'px';
+        if (!isOpen) {
+          card.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
         }
       });
     });
