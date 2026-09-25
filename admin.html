@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración — Rosetta Stone Solver</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .fade-in { animation: fadeIn 0.25s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-4 sm:p-6">
+
+  <!-- Admin Login Overlay -->
+  <div id="login-overlay" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md flex items-center justify-center z-50 p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 w-full max-w-md shadow-2xl text-center space-y-5">
+      <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-3xl shadow-lg shadow-sky-500/20">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-xl font-bold text-white tracking-tight">Acceso Administrativo</h1>
+        <p class="text-slate-400 text-xs mt-1">Control del Clúster de Resolución Rosetta Stone</p>
+      </div>
+      <form onsubmit="event.preventDefault(); adminLogin();" class="space-y-4">
+        <input type="password" id="admin-pass" placeholder="Ingresa la clave de administrador" autofocus
+          class="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-sky-500 outline-none text-center tracking-wider">
+        <button type="submit" class="w-full bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-sky-950/40">
+          Ingresar al Panel
+        </button>
+      </form>
+      <div id="login-error" class="hidden p-2.5 rounded-lg bg-red-950/80 border border-red-800 text-red-200 text-xs text-center"></div>
+    </div>
+  </div>
+
+  <!-- Dashboard Container -->
+  <div id="dashboard" class="hidden max-w-7xl mx-auto space-y-6">
+    
+    <!-- Top Bar -->
+    <header class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row justify-between items-center gap-4 shadow-xl">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-2xl shadow-md">
+          ⚡
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg sm:text-xl font-extrabold text-white">Panel de Control • Rosetta Stone</h1>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Clúster Activo</span>
+          </div>
+          <p class="text-xs text-slate-400">Aprobación de pagos, activación de cursos (A1, B1, Horas) y monitoreo en vivo</p>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+        <button onclick="loadRequests(); loadQueueStats();" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition border border-slate-700 flex items-center gap-1.5">
+          <span>🔄</span> Actualizar
+        </button>
+        <button onclick="logout()" class="px-3.5 py-2 rounded-xl bg-red-950/60 hover:bg-red-900/80 border border-red-800/60 text-red-300 text-xs font-semibold transition">
+          Cerrar Sesión
+        </button>
+      </div>
+    </header>
+
+    <!-- Metrics Cards -->
+    <section class="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center space-y-1 shadow">
+        <div class="text-xs font-semibold text-amber-400 uppercase tracking-wider">Pendientes Pago</div>
+        <div id="stat-pending" class="text-3xl font-extrabold text-amber-400 font-mono">0</div>
+        <p class="text-[11px] text-slate-500">Esperando aprobación</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center space-y-1 shadow">
+        <div class="text-xs font-semibold text-sky-400 uppercase tracking-wider">En Ejecución</div>
+        <div id="stat-running" class="text-3xl font-extrabold text-sky-400 font-mono">0</div>
+        <p class="text-[11px] text-slate-500">Resolviendo ahora</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center space-y-1 shadow">
+        <div class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Completados</div>
+        <div id="stat-completed" class="text-3xl font-extrabold text-emerald-400 font-mono">0</div>
+        <p class="text-[11px] text-slate-500">100% finalizados</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center space-y-1 shadow">
+        <div class="text-xs font-semibold text-red-400 uppercase tracking-wider">Incidencias</div>
+        <div id="stat-failed" class="text-3xl font-extrabold text-red-400 font-mono">0</div>
+        <p class="text-[11px] text-slate-500">Credenciales / Error</p>
+      </div>
+      <div class="col-span-2 sm:col-span-1 bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center space-y-1 shadow">
+        <div class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">En Cola</div>
+        <div id="stat-queue" class="text-3xl font-extrabold text-indigo-400 font-mono">0</div>
+        <p class="text-[11px] text-slate-500">Capacidad: 2 concurrencias</p>
+      </div>
+    </section>
+
+    <!-- Requests Table Card -->
+    <section class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+        <div>
+          <h2 class="text-base font-bold text-white">Solicitudes de Estudiantes</h2>
+          <p class="text-xs text-slate-400">Verifica la transferencia en Instagram antes de aprobar para que inicie la resolución</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-xs text-slate-400 font-medium">Filtrar:</label>
+          <select id="filter-status" onchange="loadRequests()"
+            class="bg-slate-950 border border-slate-700 text-white rounded-xl px-3 py-1.5 text-xs font-semibold focus:ring-2 focus:ring-sky-500 outline-none">
+            <option value="">Todas las Solicitudes</option>
+            <option value="pending_approval">⏳ Pendientes de Aprobación</option>
+            <option value="running">🔄 En Ejecución</option>
+            <option value="queued">⚡ En Cola (Aprobados)</option>
+            <option value="completed">🏆 100% Completados</option>
+            <option value="failed">❌ Fallidos / Credenciales</option>
+            <option value="rejected">🚫 Rechazados</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="text-xs text-slate-400 uppercase bg-slate-950/60 border-b border-slate-800 tracking-wider">
+            <tr>
+              <th class="px-5 py-3.5">Estudiante / Servicio</th>
+              <th class="px-4 py-3.5">Estado</th>
+              <th class="px-5 py-3.5">Progreso en Vivo</th>
+              <th class="px-4 py-3.5">Fecha</th>
+              <th class="px-5 py-3.5 text-right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="requests-body" class="divide-y divide-slate-800/80">
+            <tr>
+              <td colspan="5" class="px-5 py-8 text-center text-slate-500 text-xs">Cargando registros del clúster...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // API BASE: Detect if running on localhost or Vercel
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? 'http://localhost:4700/api'
+      : 'https://185-193-17-31.sslip.io/rosetta-api';
+
+    let token = localStorage.getItem('rosetta_admin_token');
+    let refreshInterval = null;
+
+    const serviceBadges = {
+      a1: { label: '🎓 Nivel A1 (Foundations)', class: 'bg-indigo-950 text-indigo-400 border-indigo-800' },
+      b1: { label: '🚀 Nivel B1 (Fluency)', class: 'bg-purple-950 text-purple-400 border-purple-800' },
+      hours: { label: '⏳ Solo Horas', class: 'bg-amber-950 text-amber-400 border-amber-800' },
+      combo: { label: '🌟 Pack Completo (A1+B1+Horas)', class: 'bg-emerald-950 text-emerald-400 border-emerald-800' },
+    };
+
+    const statusBadges = {
+      pending_approval: { class: 'bg-amber-950/80 text-amber-300 border-amber-800/70', label: '⏳ Pendiente Aprobar' },
+      queued: { class: 'bg-blue-950/80 text-blue-400 border-blue-800/70', label: '⚡ En Cola (Aprobado)' },
+      running: { class: 'bg-sky-950/80 text-sky-400 border-sky-800/70', label: '🔄 En Ejecución' },
+      completed: { class: 'bg-emerald-950/80 text-emerald-300 border-emerald-800/70', label: '🏆 100% Completado' },
+      failed: { class: 'bg-red-950/80 text-red-400 border-red-800/70', label: '❌ Fallido' },
+      rejected: { class: 'bg-rose-950/80 text-rose-400 border-rose-800/70', label: '🚫 Rechazado' },
+    };
+
+    if (token) {
+      verifyAndShow();
+    }
+
+    async function adminLogin() {
+      const pass = document.getElementById('admin-pass').value.trim();
+      if (!pass) return;
+      token = pass;
+      localStorage.setItem('rosetta_admin_token', pass);
+      await verifyAndShow();
+    }
+
+    async function verifyAndShow() {
+      try {
+        const res = await apiFetch('/admin/requests?limit=1');
+        if (!res.ok) throw new Error('Credenciales inválidas');
+        document.getElementById('login-overlay').classList.add('hidden');
+        document.getElementById('dashboard').classList.remove('hidden');
+        await loadRequests();
+        await loadQueueStats();
+        if (refreshInterval) clearInterval(refreshInterval);
+        refreshInterval = setInterval(() => {
+          loadRequests();
+          loadQueueStats();
+        }, 3500); // Polling cada 3.5s en vivo
+      } catch (err) {
+        document.getElementById('login-error').textContent = 'Contraseña de administrador incorrecta';
+        document.getElementById('login-error').classList.remove('hidden');
+        localStorage.removeItem('rosetta_admin_token');
+        token = null;
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('rosetta_admin_token');
+      token = null;
+      if (refreshInterval) clearInterval(refreshInterval);
+      location.reload();
+    }
+
+    function apiFetch(endpoint, opts = {}) {
+      return fetch(`${API_BASE}${endpoint}`, {
+        ...opts,
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+          ...opts.headers,
+        },
+      });
+    }
+
+    async function loadRequests() {
+      const filter = document.getElementById('filter-status').value;
+      const url = filter ? `/admin/requests?status=${filter}&limit=100` : '/admin/requests?limit=100';
+      try {
+        const res = await apiFetch(url);
+        if (!res.ok) {
+          if (res.status === 401) logout();
+          return;
+        }
+        const data = await res.json();
+        const tbody = document.getElementById('requests-body');
+
+        // Update overall stats
+        const allRes = await apiFetch('/admin/requests?limit=200');
+        if (allRes.ok) {
+          const allData = await allRes.json();
+          const all = allData.requests || [];
+          document.getElementById('stat-pending').textContent = all.filter(r => r.status === 'pending_approval').length;
+          document.getElementById('stat-running').textContent = all.filter(r => r.status === 'running').length;
+          document.getElementById('stat-completed').textContent = all.filter(r => r.status === 'completed').length;
+          document.getElementById('stat-failed').textContent = all.filter(r => r.status === 'failed' || r.status === 'rejected').length;
+        }
+
+        if (!data.requests || data.requests.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="5" class="px-5 py-8 text-center text-slate-500 text-xs">No hay solicitudes registradas con este filtro.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = data.requests.map(r => {
+          const st = statusBadges[r.status] || statusBadges.pending_approval;
+          const srv = serviceBadges[r.service_type] || serviceBadges.a1;
+
+          const pct = Math.min(100, Math.max(0, parseInt(r.progress_percent, 10) || (r.status === 'completed' ? 100 : 0)));
+          const headline = r.progress_message || (r.status === 'pending_approval' ? 'Esperando confirmación de pago' : 'Procesando en clúster...');
+          const detail = r.progress_detail || '';
+
+          // Progress Cell HTML with Visual Progress Bar
+          const progressCell = `
+            <div class="space-y-1.5 max-w-sm">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-slate-200 truncate">${headline}</span>
+                <span class="text-xs font-extrabold text-sky-400 font-mono">${pct}%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700/50">
+                <div class="bg-gradient-to-r from-sky-500 to-emerald-400 h-2 rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+              </div>
+              ${detail ? `<p class="text-[11px] text-slate-400 truncate">${detail}</p>` : ''}
+              ${r.error && (r.status === 'failed' || r.status === 'rejected') ? `<p class="text-[11px] text-red-400 font-medium">⚠️ ${r.error}</p>` : ''}
+              ${r.hours_injected > 0 ? `<span class="inline-block mt-0.5 text-[10px] text-emerald-400 font-mono font-bold">${r.hours_injected} horas inyectadas</span>` : ''}
+            </div>
+          `;
+
+          // Action Buttons
+          let actions = '';
+          if (r.status === 'pending_approval') {
+            actions = `
+              <div class="flex items-center justify-end gap-1.5">
+                <button onclick="approveRequest('${r.id}')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-1.5 rounded-xl text-xs font-bold transition shadow shadow-emerald-950 flex items-center gap-1">
+                  <span>✓</span> Aprobar y Ejecutar
+                </button>
+                <button onclick="rejectRequest('${r.id}')" class="bg-rose-950 hover:bg-rose-900 text-rose-300 border border-rose-800/80 px-2.5 py-1.5 rounded-xl text-xs font-semibold transition">
+                  ✕ Rechazar
+                </button>
+              </div>
+            `;
+          } else if (r.status === 'running') {
+            actions = `
+              <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center gap-1.5 text-xs text-sky-400 font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span> Activo
+                </span>
+                <button onclick="retryRequest('${r.id}')" title="Reiniciar proceso si se atascó" class="bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 px-2 py-1 rounded-lg text-[10px] font-semibold transition">
+                  ↻ Reiniciar
+                </button>
+              </div>
+            `;
+          } else if (r.status === 'queued') {
+            actions = `
+              <div class="flex items-center justify-end gap-2">
+                <span class="text-xs text-indigo-400 font-semibold">⚡ En Cola</span>
+              </div>
+            `;
+          } else if (r.status === 'failed' || r.status === 'rejected') {
+            actions = `
+              <div class="flex items-center justify-end">
+                <button onclick="retryRequest('${r.id}')" class="bg-sky-600 hover:bg-sky-500 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition shadow">
+                  ↻ Reintentar
+                </button>
+              </div>
+            `;
+          } else if (r.status === 'completed') {
+            actions = `<span class="text-xs text-emerald-400 font-bold">✨ Finalizado 100%</span>`;
+          }
+
+          return `
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="px-5 py-3.5">
+                <div class="font-mono text-xs font-semibold text-white">${r.email}</div>
+                ${r.student_name ? `<div class="text-xs text-slate-300 mt-0.5">${r.student_name}</div>` : ''}
+                <div class="flex items-center gap-2 mt-1.5">
+                  <span class="px-2 py-0.5 rounded-md border text-[10px] font-bold font-mono ${srv.class}">${srv.label}</span>
+                  <span class="text-[10px] text-slate-500 font-mono" title="${r.id}">ID: ${r.id.slice(0, 8)}...</span>
+                </div>
+              </td>
+              <td class="px-4 py-3.5">
+                <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold border ${st.class}">${st.label}</span>
+              </td>
+              <td class="px-5 py-3.5">${progressCell}</td>
+              <td class="px-4 py-3.5 text-slate-400 text-xs whitespace-nowrap">
+                ${new Date(r.created_at).toLocaleString('es-EC', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })}
+              </td>
+              <td class="px-5 py-3.5 text-right whitespace-nowrap">${actions}</td>
+            </tr>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error('Error al cargar solicitudes:', err);
+      }
+    }
+
+    async function loadQueueStats() {
+      try {
+        const res = await apiFetch('/admin/queue');
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById('stat-queue').textContent = (data.pending?.length || 0) + (data.running || 0);
+        }
+      } catch(e) {}
+    }
+
+    async function approveRequest(id) {
+      if (!confirm('¿Confirmas que el pago fue recibido para iniciar la resolución de este estudiante?')) return;
+      const res = await apiFetch(`/admin/approve/${id}`, { method: 'POST', body: '{}' });
+      if (res.ok) {
+        await loadRequests();
+        await loadQueueStats();
+      } else {
+        const err = await res.json();
+        alert('Error al aprobar: ' + (err.error || 'Desconocido'));
+      }
+    }
+
+    async function rejectRequest(id) {
+      const reason = prompt('Motivo del rechazo (opcional):', 'Pago no recibido en Instagram');
+      if (reason === null) return;
+      const res = await apiFetch(`/admin/reject/${id}`, { method: 'POST', body: JSON.stringify({ reason: reason || 'Pago no verificado' }) });
+      if (res.ok) {
+        await loadRequests();
+      }
+    }
+
+    async function retryRequest(id) {
+      if (!confirm('¿Deseas reiniciar la ejecución de este estudiante?')) return;
+      const res = await apiFetch(`/admin/retry/${id}`, { method: 'POST', body: '{}' });
+      if (res.ok) {
+        await loadRequests();
+        await loadQueueStats();
+      }
+    }
+  </script>
+</body>
+</html>
