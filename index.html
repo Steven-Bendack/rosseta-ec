@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rosetta Stone ULEAM — Resolución de Cursos y Módulos</title>
-  <meta name="description" content="Resolvemos tu curso completo de Rosetta Stone para la ULEAM. Todos los niveles y módulos por $26.99. Conserva tu gratuidad sin estrés.">
+  <title>Rosetta Stone ULEAM — Resolución Segura de Cursos y Módulos</title>
+  <meta name="description" content="Resolvemos tu curso completo de Rosetta Stone para la ULEAM. Todos los niveles y módulos por $26.99. Conserva tu gratuidad sin estrés. 100% Confiable.">
   <link rel="icon" type="image/png" href="rosetta-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,6 +132,7 @@
       display: flex;
       gap: 2rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -144,6 +145,32 @@
 
     .nav-links a:hover {
       color: var(--rosetta-blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-ig-nav {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #ffffff;
+      padding: 0.55rem 1.1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 10px rgba(220, 39, 67, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-ig-nav:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(220, 39, 67, 0.35);
     }
 
     .btn-header-cta {
@@ -414,6 +441,265 @@
     .section-subtitle {
       font-size: 1.05rem;
       color: var(--text-gray);
+    }
+
+    /* ── SECCIÓN VIDEO DE CONFIANZA ── */
+    .video-section {
+      background: linear-gradient(180deg, #f0f7fc 0%, #ffffff 100%);
+      border-top: 1px solid #e0f2fe;
+      border-bottom: 1px solid #e0f2fe;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3.5rem;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .video-phone-wrap {
+      position: relative;
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 36px;
+      padding: 10px;
+      background: linear-gradient(135deg, #002d62 0%, #0077c8 100%);
+      box-shadow: 0 20px 40px -10px rgba(0, 119, 200, 0.4);
+    }
+
+    .video-phone-screen {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #000000;
+      aspect-ratio: 9 / 19.5;
+    }
+
+    .video-phone-screen video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-trust-info {
+      text-align: left;
+    }
+
+    .trust-pill-tag {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .trust-pill-tag::before {
+      content: '✔';
+      font-weight: 900;
+    }
+
+    .video-trust-info h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--rosetta-navy);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .video-trust-info p {
+      font-size: 1.05rem;
+      color: var(--text-gray);
+      margin-bottom: 1.75rem;
+      line-height: 1.7;
+    }
+
+    .trust-points-list {
+      list-style: none;
+      margin-bottom: 2.25rem;
+    }
+
+    .trust-points-list li {
+      padding: 0.6rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .trust-bullet {
+      width: 24px;
+      height: 24px;
+      background: #e0f2fe;
+      color: var(--rosetta-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ── SECCIÓN INSTAGRAM PROMINENTE ── */
+    .instagram-section {
+      background: #ffffff;
+      padding: 5rem 1.5rem;
+    }
+
+    .instagram-card-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #ffffff 0%, #fff5f7 50%, #f0f7fc 100%);
+      border: 2px solid #fecdd3;
+      border-radius: 32px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 16px 36px -4px rgba(225, 29, 72, 0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .instagram-badge-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .instagram-card-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--rosetta-navy);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .instagram-card-content .ig-handle {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #dc2743;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .instagram-card-content p {
+      font-size: 1rem;
+      color: var(--text-gray);
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
+    }
+
+    .btn-instagram-big {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #ffffff;
+      padding: 0.95rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 8px 20px rgba(220, 39, 67, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .btn-instagram-big:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(220, 39, 67, 0.45);
+    }
+
+    .instagram-preview-box {
+      background: #ffffff;
+      border: 1px solid #fbcfe8;
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .ig-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+      padding: 3px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ig-avatar-inner {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ig-avatar-inner img {
+      width: 60%;
+      height: auto;
+    }
+
+    .ig-preview-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--rosetta-navy);
+    }
+
+    .ig-preview-tag {
+      font-size: 0.85rem;
+      color: #dc2743;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .ig-stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .ig-stat-col strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--rosetta-navy);
+      font-weight: 800;
+    }
+
+    .ig-stat-col span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
     }
 
     /* ── HOW IT WORKS ── */
@@ -860,6 +1146,7 @@
       display: flex;
       justify-content: center;
       gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .footer-links-list a {
@@ -901,6 +1188,11 @@
       .hero-content { text-align: center; }
       .hero-actions { justify-content: center; }
       .hero-badges-bar { justify-content: center; }
+      .video-grid { grid-template-columns: 1fr; text-align: center; }
+      .video-trust-info { text-align: center; }
+      .trust-points-list li { justify-content: center; }
+      .instagram-card-wrap { grid-template-columns: 1fr; text-align: center; padding: 2.5rem 1.5rem; }
+      .instagram-badge-icon { margin-left: auto; margin-right: auto; }
       .nav-links { display: none; }
     }
   </style>
@@ -924,14 +1216,22 @@
         </div>
       </a>
       <ul class="nav-links">
+        <li><a href="#confianza">100% Confiable</a></li>
         <li><a href="#proceso">¿Cómo funciona?</a></li>
         <li><a href="#niveles">Niveles</a></li>
         <li><a href="#precio">Precios</a></li>
+        <li><a href="#instagram">Instagram</a></li>
         <li><a href="#faq">Preguntas</a></li>
       </ul>
-      <a href="https://wa.me/593984343514?text=Hola%2C+necesito+ayuda+con+mi+curso+de+Rosetta+Stone" class="btn-header-cta" target="_blank">
-        WhatsApp Asesor
-      </a>
+      <div class="nav-actions">
+        <a href="https://www.instagram.com/rossetaec/" class="btn-ig-nav" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @rossetaec
+        </a>
+        <a href="https://wa.me/593984343514?text=Hola%2C+necesito+ayuda+con+mi+curso+de+Rosetta+Stone" class="btn-header-cta" target="_blank">
+          WhatsApp Asesor
+        </a>
+      </div>
     </div>
   </header>
 
@@ -954,7 +1254,7 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Escríbenos por WhatsApp
           </a>
-          <a href="#proceso" class="btn-secondary">Ver cómo funciona</a>
+          <a href="#confianza" class="btn-secondary">Ver Video de Prueba</a>
         </div>
 
         <div class="hero-badges-bar">
@@ -984,6 +1284,100 @@
             <span class="hero-tag">Nivel A1 & A2</span>
             <span class="hero-tag">Nivel B1 & B2</span>
             <span class="hero-tag">Focused Skills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN VIDEO DE CONFIANZA ── -->
+  <section id="confianza" class="video-section">
+    <div class="container">
+      <div class="video-grid">
+        <!-- Mockup Teléfono con Video en Alta Calidad -->
+        <div class="video-phone-wrap">
+          <div class="video-phone-screen">
+            <video controls playsinline preload="metadata" poster="video-thumb-15.jpg">
+              <source src="video-confianza.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+        </div>
+
+        <!-- Información de Confianza -->
+        <div class="video-trust-info">
+          <div class="trust-pill-tag">100% Confiable y Verificado</div>
+          <h3>Mira en vivo cómo dejamos los cursos aprobados</h3>
+          <p>
+            No arriesgues tu dinero ni tu récord académico con promesas vacías. En este video puedes observar directamente la plataforma oficial de Rosetta Stone con todas las lecciones marcadas en verde, horas cumplidas y evaluaciones completadas al 100%.
+          </p>
+
+          <ul class="trust-points-list">
+            <li>
+              <div class="trust-bullet">✓</div>
+              <span><strong>Módulos completos:</strong> Cada unidad resuelta con el puntaje requerido por el instituto de idiomas.</span>
+            </li>
+            <li>
+              <div class="trust-bullet">✓</div>
+              <span><strong>Horas reales:</strong> El sistema de la U registra el tiempo de conexión exacto y reglamentario.</span>
+            </li>
+            <li>
+              <div class="trust-bullet">✓</div>
+              <span><strong>Comprobantes al instante:</strong> Descargas tu certificado de notas oficial apenas terminemos.</span>
+            </li>
+          </ul>
+
+          <a href="https://wa.me/593984343514?text=Hola%2C+vi+el+video+de+Rosetta+y+quiero+contratar+el+servicio" class="btn-primary" target="_blank">
+            Asegurar mi Nivel por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN INSTAGRAM OFICIAL ── -->
+  <section id="instagram" class="instagram-section">
+    <div class="container">
+      <div class="instagram-card-wrap">
+        <div class="instagram-card-content">
+          <div class="instagram-badge-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <h3>Síguenos en Instagram</h3>
+          <span class="ig-handle">@rossetaec</span>
+          <p>
+            Publicamos evidencias de cursos finalizados, fechas clave del calendario académico de la ULEAM, testimonios de estudiantes que pasaron su nivel y avisos importantes sobre la plataforma.
+          </p>
+          <a href="https://www.instagram.com/rossetaec/" class="btn-instagram-big" target="_blank">
+            Ver Perfil Oficial @rossetaec
+          </a>
+        </div>
+
+        <!-- Preview Box Instagram -->
+        <div class="instagram-preview-box">
+          <div class="ig-avatar">
+            <div class="ig-avatar-inner">
+              <img src="rosetta-logo.png" alt="Avatar RosettaEC">
+            </div>
+          </div>
+          <div class="ig-preview-name">RosettaEC Oficial</div>
+          <div class="ig-preview-tag">@rossetaec · Apoyo Estudiantil</div>
+          <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: 1.25rem;">
+            Resolución de módulos de Rosetta Stone para estudiantes de la ULEAM. 100% Confiable y Seguro.
+          </p>
+          <div class="ig-stats-row">
+            <div class="ig-stat-col">
+              <strong>100%</strong>
+              <span>Garantía</span>
+            </div>
+            <div class="ig-stat-col">
+              <strong>< 72h</strong>
+              <span>Entrega</span>
+            </div>
+            <div class="ig-stat-col">
+              <strong>Manta</strong>
+              <span>Manabí</span>
+            </div>
           </div>
         </div>
       </div>
