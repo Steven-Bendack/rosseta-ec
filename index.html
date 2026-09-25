@@ -1363,6 +1363,503 @@
         right: 1.25rem;
       }
     }
+
+    /* ─── PORTAL DE ACREDITACIÓN EN VIVO (UTM STYLE) ─── */
+    .portal-section {
+      background: linear-gradient(180deg, #090e17 0%, #0c1524 50%, #070b12 100%);
+      color: #f1f5f9;
+      padding: 5rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(56, 189, 248, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    }
+    .portal-glow-bg {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 450px;
+      background: radial-gradient(ellipse, rgba(0, 119, 200, 0.22) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .portal-container {
+      max-width: 980px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .portal-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .portal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 119, 200, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      padding: 0.4rem 1.1rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .portal-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #38bdf8;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #38bdf8;
+      animation: portalPulse 2s infinite;
+    }
+    @keyframes portalPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .portal-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .portal-title span {
+      background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .portal-desc {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .portal-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 30px -5px rgba(0, 119, 200, 0.15);
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 640px) {
+      .portal-card { padding: 1.5rem 1.2rem; }
+    }
+    .portal-service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .portal-radio-card {
+      position: relative;
+      cursor: pointer;
+    }
+    .portal-radio-card input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .portal-radio-box {
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: 16px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      transition: all 0.25s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .portal-radio-card input:checked + .portal-radio-box {
+      border-color: #38bdf8;
+      background: rgba(14, 165, 233, 0.15);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+    }
+    .portal-radio-icon {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+    .portal-radio-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+    .portal-radio-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    .portal-form-group {
+      margin-bottom: 1.25rem;
+    }
+    .portal-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #cbd5e1;
+      margin-bottom: 0.5rem;
+    }
+    .portal-label span {
+      color: #38bdf8;
+    }
+    .portal-input {
+      width: 100%;
+      background: rgba(2, 6, 23, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 14px;
+      padding: 0.9rem 1.1rem;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .portal-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+    .portal-input-wrap {
+      position: relative;
+    }
+    .portal-pass-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    .portal-pass-toggle:hover {
+      color: #38bdf8;
+    }
+    .portal-help-text {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 0.4rem;
+    }
+    .portal-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7 0%, #0077c8 50%, #0284c7 100%);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 1.1rem 1.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 119, 200, 0.4);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .portal-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(0, 119, 200, 0.6);
+      border-color: #38bdf8;
+    }
+    .portal-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    /* LIVE TRACKER STYLES */
+    .portal-tracker-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      margin-bottom: 1.5rem;
+    }
+    .portal-id-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(30, 41, 59, 0.6);
+      padding: 0.4rem 0.8rem;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    .portal-copy-btn {
+      background: transparent;
+      border: none;
+      color: #38bdf8;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .portal-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .status-running {
+      background: rgba(14, 165, 233, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .status-completed {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.4);
+    }
+    .status-queued {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+    }
+    .status-failed {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(248, 113, 113, 0.4);
+    }
+    .portal-progress-wrap {
+      margin: 1.5rem 0;
+    }
+    .portal-progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.6rem;
+    }
+    .portal-progress-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+    .portal-progress-percent {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .portal-progress-bar-bg {
+      width: 100%;
+      height: 14px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      position: relative;
+    }
+    .portal-progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0077c8 0%, #38bdf8 50%, #10b981 100%);
+      border-radius: 9999px;
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .portal-progress-bar-fill::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+      animation: portalShimmer 2s infinite;
+    }
+    @keyframes portalShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .portal-stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .portal-stat-card {
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+    .portal-stat-card-title {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .portal-stat-card-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .portal-log-terminal {
+      background: #030712;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 14px;
+      padding: 1.25rem;
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      max-height: 180px;
+      overflow-y: auto;
+      margin-top: 1.5rem;
+    }
+    .portal-log-entry {
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+    .portal-log-entry span {
+      color: #38bdf8;
+    }
+    /* OFFICIAL EMAIL CARD */
+    .portal-email-box {
+      background: linear-gradient(135deg, rgba(6, 78, 59, 0.25) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 2px solid rgba(52, 211, 153, 0.4);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15);
+    }
+    .portal-email-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .portal-email-box-header h3 {
+      font-size: 1.25rem;
+      color: #34d399;
+      font-weight: 800;
+    }
+    .portal-email-field {
+      margin-bottom: 1rem;
+    }
+    .portal-email-field label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #94a3b8;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .portal-email-field-val {
+      background: rgba(2, 6, 23, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 10px;
+      padding: 0.6rem 0.9rem;
+      color: #ffffff;
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+    .portal-email-textarea {
+      width: 100%;
+      min-height: 180px;
+      background: rgba(2, 6, 23, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 10px;
+      padding: 0.9rem;
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .portal-email-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .portal-btn-copy {
+      flex: 1;
+      min-width: 180px;
+      background: #10b981;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .portal-btn-copy:hover {
+      background: #059669;
+      transform: translateY(-1px);
+    }
+    .portal-btn-open {
+      flex: 1;
+      min-width: 180px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .portal-btn-open:hover {
+      background: rgba(56, 189, 248, 0.25);
+    }
+    .portal-lookup-wrap {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .portal-lookup-wrap input {
+      flex: 1;
+    }
+    .portal-lookup-btn {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      font-weight: 700;
+      padding: 0 1.25rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .portal-lookup-btn:hover {
+      background: rgba(56, 189, 248, 0.25);
+    }
   </style>
 </head>
 <body>
@@ -1385,6 +1882,7 @@
 
       <!-- Menú Desktop -->
       <ul class="nav-links">
+        <li><a href="#portal-acreditacion" style="color: #38bdf8; font-weight: 700;">⚡ Acreditación en Vivo</a></li>
         <li><a href="#confianza">100% Confiable</a></li>
         <li><a href="#proceso">¿Cómo funciona?</a></li>
         <li><a href="#niveles">Niveles</a></li>
@@ -1395,12 +1893,11 @@
 
       <!-- Botones de Acción Adaptados -->
       <div class="nav-actions">
-        <a href="https://www.instagram.com/rossetaec/" class="btn-ig-nav" target="_blank" title="Instagram Oficial @rossetaec">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          <span>Instagram</span>
+        <a href="#portal-acreditacion" class="btn-header-cta" style="background: linear-gradient(135deg, #0284c7 0%, #0077c8 100%);">
+          ⚡ Probar Ahora
         </a>
 
-        <a href="https://wa.me/593984343514?text=Hola%2C+necesito+ayuda+con+mi+curso+de+Rosetta+Stone" class="btn-header-cta" target="_blank">
+        <a href="https://wa.me/593984343514?text=Hola%2C+necesito+ayuda+con+mi+curso+de+Rosetta+Stone" class="btn-header-cta" target="_blank" style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(148, 163, 184, 0.3);">
           WhatsApp
         </a>
 
@@ -1412,6 +1909,7 @@
 
     <!-- Menú Desplegable Móvil -->
     <div class="mobile-menu" id="mobileMenu">
+      <a href="#portal-acreditacion" class="mobile-link" style="color: #38bdf8; font-weight: 800;"><span>⚡ Simulador & Acreditación</span> ➔</a>
       <a href="#confianza" class="mobile-link"><span>🎥 100% Confiable (Video)</span> ➔</a>
       <a href="#proceso" class="mobile-link"><span>📋 ¿Cómo funciona?</span> ➔</a>
       <a href="#niveles" class="mobile-link"><span>🎯 Niveles Incluidos</span> ➔</a>
@@ -1432,15 +1930,16 @@
           Resolvemos tu curso de <span class="highlight-blue">Rosetta Stone</span> por ti
         </h2>
         <p class="hero-desc">
-          Somos un grupo independiente de apoyo entre universitarios de la ULEAM. Hacemos todas tus tareas, horas de plataforma y evaluaciones nivel por nivel en tiempo récord. Tú solo envías tu reporte y pasas seguro.
+          Somos un grupo independiente de apoyo entre universitarios de la ULEAM y UTM. Hacemos todas tus tareas, horas de plataforma y evaluaciones nivel por nivel en tiempo récord. Tú solo envías tu reporte y pasas seguro.
         </p>
 
         <div class="hero-actions">
-          <a href="https://wa.me/593984343514?text=Hola%2C+quiero+cotizar+mi+curso+de+Rosetta+Stone" class="btn-primary" target="_blank">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Escríbenos por WhatsApp
+          <a href="#portal-acreditacion" class="btn-primary" style="background: linear-gradient(135deg, #0284c7 0%, #0077c8 100%); box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);">
+            🚀 Iniciar Mi Acreditación en Vivo
           </a>
-          <a href="#confianza" class="btn-secondary">Ver Video de Prueba</a>
+          <a href="https://wa.me/593984343514?text=Hola%2C+quiero+cotizar+mi+curso+de+Rosetta+Stone" class="btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+            💬 WhatsApp
+          </a>
         </div>
 
         <div class="hero-badges-bar">
@@ -1473,6 +1972,252 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════ -->
+  <!-- ── SECCIÓN PORTAL DE ACREDITACIÓN & SIMULADOR EN VIVO (UTM STYLE) ── -->
+  <!-- ═════════════════════════════════════════════════════════════════════ -->
+  <section id="portal-acreditacion" class="portal-section">
+    <div class="portal-glow-bg"></div>
+    <div class="portal-container">
+      
+      <!-- HEADER DEL PORTAL -->
+      <div class="portal-header">
+        <div class="portal-badge">
+          <span class="portal-badge-dot"></span>
+          Sistema Cloud de Acreditación Oficial 2026
+        </div>
+        <h2 class="portal-title">
+          Resuelve tu Curso y Aumenta tus Horas <span>en Vivo</span>
+        </h2>
+        <p class="portal-desc">
+          Ingresa tus credenciales oficiales de Rosetta Stone. Nuestro clúster en la nube completará de forma autónoma el 100% de tus actividades, inyectará tus horas en LCP y te entregará el correo oficial redactado listo para enviar a la Dirección de Idiomas.
+        </p>
+      </div>
+
+      <!-- TARJETA 1: FORMULARIO DE INGRESO -->
+      <div id="portal-form-card" class="portal-card">
+        <form id="rosetta-solver-form">
+          
+          <!-- SELECCIÓN DE SERVICIO -->
+          <div class="portal-form-group">
+            <label class="portal-label">Selecciona el Servicio Requerido <span>*</span></label>
+            <div class="portal-service-grid">
+              
+              <label class="portal-radio-card">
+                <input type="radio" name="service_type" value="a1" checked onchange="handleServiceChange(this.value)">
+                <div class="portal-radio-box">
+                  <span class="portal-radio-icon">🎓</span>
+                  <span class="portal-radio-title">Nivel A1 (Foundations)</span>
+                  <span class="portal-radio-sub">100% Actividades L1 a L5</span>
+                </div>
+              </label>
+
+              <label class="portal-radio-card">
+                <input type="radio" name="service_type" value="b1" onchange="handleServiceChange(this.value)">
+                <div class="portal-radio-box">
+                  <span class="portal-radio-icon">🚀</span>
+                  <span class="portal-radio-title">Nivel B1 (Fluency)</span>
+                  <span class="portal-radio-sub">Módulos y Evaluaciones Orales</span>
+                </div>
+              </label>
+
+              <label class="portal-radio-card">
+                <input type="radio" name="service_type" value="hours" onchange="handleServiceChange(this.value)">
+                <div class="portal-radio-box">
+                  <span class="portal-radio-icon">⏳</span>
+                  <span class="portal-radio-title">Solo Aumento Horas</span>
+                  <span class="portal-radio-sub">Inyección LCP oficial</span>
+                </div>
+              </label>
+
+              <label class="portal-radio-card">
+                <input type="radio" name="service_type" value="combo" onchange="handleServiceChange(this.value)">
+                <div class="portal-radio-box">
+                  <span class="portal-radio-icon">🌟</span>
+                  <span class="portal-radio-title">Pack Completo</span>
+                  <span class="portal-radio-sub">Curso 100% + Horas LCP</span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- UNIVERSIDAD Y NOMBRE -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            
+            <div class="portal-form-group">
+              <label class="portal-label">Universidad / Institución <span>*</span></label>
+              <select id="portal-university" class="portal-input" style="cursor: pointer;">
+                <option value="uleam" selected>ULEAM — Univ. Laica Eloy Alfaro de Manabí</option>
+                <option value="utm">UTM — Univ. Técnica de Manabí</option>
+                <option value="general">Otra Institución Académica</option>
+              </select>
+            </div>
+
+            <div class="portal-form-group">
+              <label class="portal-label">Tu Nombre y Apellido (Para el correo oficial)</label>
+              <input type="text" id="portal-student-name" class="portal-input" placeholder="Ej: Julissa López Mantuano">
+            </div>
+
+          </div>
+
+          <!-- CORREO INSTITUCIONAL -->
+          <div class="portal-form-group">
+            <label class="portal-label">Correo Institucional Rosetta Stone <span>*</span></label>
+            <input type="email" id="portal-email" required class="portal-input" placeholder="ejemplo@live.uleam.edu.ec o @utm.edu.ec">
+            <p class="portal-help-text">El correo registrado en tu cuenta de Rosetta Stone.</p>
+          </div>
+
+          <!-- CONTRASEÑA -->
+          <div class="portal-form-group">
+            <label class="portal-label">Contraseña de Rosetta Stone <span>*</span></label>
+            <div class="portal-input-wrap">
+              <input type="password" id="portal-password" required class="portal-input" placeholder="Tu contraseña de acceso">
+              <button type="button" class="portal-pass-toggle" onclick="togglePortalPass()">
+                <span id="portal-pass-label">Ver</span>
+              </button>
+            </div>
+            <p class="portal-help-text">Tus credenciales se cifran en memoria bajo algoritmo militar AES-256-GCM.</p>
+          </div>
+
+          <!-- HORAS OBJETIVO (VISIBLE SI SELECCIONA HORAS O COMBO) -->
+          <div id="portal-hours-group" class="portal-form-group" style="display: none;">
+            <label class="portal-label">Horas Totales a Acreditar en Plataforma (LCP)</label>
+            <select id="portal-target-hours" class="portal-input" style="cursor: pointer;">
+              <option value="50">50 Horas Académicas (Mínimo requerido)</option>
+              <option value="100">100 Horas Académicas (Recomendado)</option>
+              <option value="192">192 Horas Académicas (Acreditación alta)</option>
+              <option value="576">576 Horas Académicas (Récord completo)</option>
+            </select>
+          </div>
+
+          <button type="submit" id="portal-submit-btn" class="portal-submit-btn">
+            <span>🚀 Iniciar Acreditación y Ver Progreso en Vivo</span>
+          </button>
+
+          <div id="portal-form-error" style="display: none; margin-top: 1rem; padding: 0.9rem; border-radius: 12px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(248, 113, 113, 0.4); color: #f87171; font-size: 0.85rem; font-weight: 600; text-align: center;"></div>
+        </form>
+      </div>
+
+      <!-- TARJETA 2: PROGRESO EN VIVO (LIVE TRACKER) -->
+      <div id="portal-status-card" class="portal-card" style="display: none;">
+        
+        <div class="portal-tracker-header">
+          <div>
+            <span style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.25rem;">ID de Solicitud Única</span>
+            <div class="portal-id-badge">
+              <span id="tracker-request-id">...</span>
+              <button type="button" class="portal-copy-btn" onclick="copyRequestId()" title="Copiar ID">📋</button>
+            </div>
+          </div>
+          <div>
+            <span id="tracker-status-pill" class="portal-status-pill status-running">
+              <span class="portal-badge-dot"></span>
+              <span id="tracker-status-text">En Ejecución</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="portal-progress-wrap">
+          <div class="portal-progress-top">
+            <span id="tracker-headline" class="portal-progress-label">Procesando curso en servidores oficiales...</span>
+            <span class="portal-progress-percent"><span id="tracker-percent">0</span>%</span>
+          </div>
+          <div class="portal-progress-bar-bg">
+            <div id="tracker-bar" class="portal-progress-bar-fill" style="width: 0%;"></div>
+          </div>
+          <p id="tracker-detail" style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.75rem; line-height: 1.5;">
+            Conectando con clúster seguro de ejecución.
+          </p>
+        </div>
+
+        <div class="portal-stats-row">
+          <div class="portal-stat-card">
+            <div class="portal-stat-card-title">Estudiante</div>
+            <div id="tracker-student-email" class="portal-stat-card-val" style="font-size: 0.95rem; font-family: monospace; word-break: break-all;">-</div>
+          </div>
+          <div class="portal-stat-card">
+            <div class="portal-stat-card-title">Nivel / Módulo Actual</div>
+            <div id="tracker-unit" class="portal-stat-card-val" style="font-size: 0.95rem; color: #38bdf8;">-</div>
+          </div>
+          <div class="portal-stat-card">
+            <div class="portal-stat-card-title">Actividades / Horas</div>
+            <div id="tracker-count" class="portal-stat-card-val" style="font-size: 0.95rem; color: #34d399;">-</div>
+          </div>
+        </div>
+
+        <!-- TERMINAL DE REGISTRO EN VIVO -->
+        <div class="portal-log-terminal" id="tracker-log-terminal">
+          <div class="portal-log-entry"><span>[Sistema]</span> Inicializando canal seguro con el clúster...</div>
+        </div>
+
+        <!-- TARJETA 3: CORREO OFICIAL UNIVERSITARIO AL COMPLETAR (100%) -->
+        <div id="portal-completion-card" class="portal-email-box" style="display: none;">
+          <div class="portal-email-box-header">
+            <span style="font-size: 1.8rem;">🎉</span>
+            <div>
+              <h3>¡Acreditación Completada al 100%!</h3>
+              <p style="font-size: 0.85rem; color: #cbd5e1;">Tu curso y horas fueron aprobados. Copia el siguiente correo formal para enviarlo a la Dirección de Idiomas.</p>
+            </div>
+          </div>
+
+          <div class="portal-email-field">
+            <label>Destinatario Oficial</label>
+            <div id="email-to-val" class="portal-email-field-val">centro.idiomas@uleam.edu.ec</div>
+          </div>
+
+          <div class="portal-email-field">
+            <label>Asunto del Correo</label>
+            <div id="email-subject-val" class="portal-email-field-val">Notificación de Finalización al 100% Curso Rosetta Stone</div>
+          </div>
+
+          <div class="portal-email-field">
+            <label>Cuerpo del Mensaje (Formal y Académico)</label>
+            <textarea id="email-body-val" class="portal-email-textarea" readonly></textarea>
+          </div>
+
+          <div class="portal-email-actions">
+            <button type="button" class="portal-btn-copy" onclick="copyOfficialEmail()">
+              <span>📋 Copiar Correo Oficial</span>
+            </button>
+            <a id="email-open-mailto" href="#" class="portal-btn-open" target="_blank">
+              <span>✉️ Abrir en Gmail / Outlook</span>
+            </a>
+            <a id="email-confirm-wa" href="https://wa.me/593984343514" class="portal-btn-open" target="_blank" style="border-color: rgba(52, 211, 153, 0.5); color: #34d399;">
+              <span>💬 Confirmar por WhatsApp</span>
+            </a>
+          </div>
+          <p id="portal-copy-feedback" style="display: none; text-align: center; color: #34d399; font-size: 0.85rem; font-weight: 700; margin-top: 0.75rem;">
+            ✓ ¡Texto del correo copiado al portapapeles!
+          </p>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <button type="button" onclick="resetPortalForm()" style="background: transparent; border: 1px solid rgba(148, 163, 184, 0.3); color: #94a3b8; padding: 0.6rem 1.2rem; border-radius: 10px; cursor: pointer; font-size: 0.85rem;">
+            🔄 Realizar otra solicitud o volver al formulario
+          </button>
+        </div>
+
+      </div>
+
+      <!-- TARJETA 4: CONSULTAR POR ID EXISTENTE -->
+      <div class="portal-card" style="margin-top: 2rem; padding: 1.8rem 2rem;">
+        <h3 style="font-size: 1.1rem; color: #ffffff; font-weight: 700; margin-bottom: 0.4rem;">
+          🔍 ¿Ya realizaste tu solicitud? Consulta tu avance en vivo
+        </h3>
+        <p style="font-size: 0.85rem; color: #94a3b8;">
+          Ingresa el código identificador único (ID) que recibiste al enviar tus credenciales para ver el estado y el correo de culminación.
+        </p>
+        <div class="portal-lookup-wrap">
+          <input type="text" id="portal-lookup-input" class="portal-input" placeholder="Pega aquí tu ID de Solicitud (ej: 5fc37c23-b8aa...)">
+          <button type="button" class="portal-lookup-btn" onclick="lookupStatusById()">
+            Consultar Estado
+          </button>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1864,6 +2609,218 @@
         });
       });
     }
+
+    // ═════════════════════════════════════════════════════════════
+    // CLIENT LOGIC FOR ROSETTA SOLVER & LIVE TRACKER
+    // ═════════════════════════════════════════════════════════════
+    const ROSETTA_API_BASE = 'http://185.193.17.31:4700/api';
+    let rosettaPollInterval = null;
+    let currentRequestId = null;
+
+    function handleServiceChange(val) {
+      const hoursGroup = document.getElementById('portal-hours-group');
+      if (val === 'hours' || val === 'combo') {
+        hoursGroup.style.display = 'block';
+      } else {
+        hoursGroup.style.display = 'none';
+      }
+    }
+
+    function togglePortalPass() {
+      const inp = document.getElementById('portal-password');
+      const lbl = document.getElementById('portal-pass-label');
+      if (inp.type === 'password') {
+        inp.type = 'text';
+        lbl.textContent = 'Ocultar';
+      } else {
+        inp.type = 'password';
+        lbl.textContent = 'Ver';
+      }
+    }
+
+    function copyRequestId() {
+      if (!currentRequestId) return;
+      navigator.clipboard.writeText(currentRequestId).then(() => {
+        alert('ID de solicitud copiado al portapapeles: ' + currentRequestId);
+      });
+    }
+
+    function copyOfficialEmail() {
+      const body = document.getElementById('email-body-val').value;
+      const to = document.getElementById('email-to-val').textContent;
+      const subj = document.getElementById('email-subject-val').textContent;
+      const fullText = `Para: ${to}\nAsunto: ${subj}\n\n${body}`;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        const feedback = document.getElementById('portal-copy-feedback');
+        feedback.style.display = 'block';
+        setTimeout(() => { feedback.style.display = 'none'; }, 4000);
+      });
+    }
+
+    function resetPortalForm() {
+      stopRosettaPolling();
+      document.getElementById('portal-form-card').style.display = 'block';
+      document.getElementById('portal-status-card').style.display = 'none';
+      document.getElementById('portal-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('rosetta-solver-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('portal-submit-btn');
+      const errBox = document.getElementById('portal-form-error');
+      errBox.style.display = 'none';
+
+      const email = document.getElementById('portal-email').value.trim();
+      const password = document.getElementById('portal-password').value;
+      const university = document.getElementById('portal-university').value;
+      const student_name = document.getElementById('portal-student-name').value.trim();
+      const serviceTypeInput = document.querySelector('input[name="service_type"]:checked');
+      const service_type = serviceTypeInput ? serviceTypeInput.value : 'a1';
+      const target_hours = document.getElementById('portal-target-hours').value;
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳ Conectando con Servidores Oficiales...</span>';
+
+      try {
+        const res = await fetch(`${ROSETTA_API_BASE}/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, service_type, target_hours, university, student_name })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Error al registrar solicitud');
+
+        currentRequestId = data.requestId;
+        localStorage.setItem('rosetta_last_request_id', data.requestId);
+
+        document.getElementById('portal-form-card').style.display = 'none';
+        document.getElementById('portal-status-card').style.display = 'block';
+
+        await updateTrackerUI(data.requestId);
+        startRosettaPolling(data.requestId);
+        document.getElementById('portal-status-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      } catch (err) {
+        errBox.textContent = err.message;
+        errBox.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>🚀 Iniciar Acreditación y Ver Progreso en Vivo</span>';
+      }
+    });
+
+    async function lookupStatusById() {
+      const id = document.getElementById('portal-lookup-input').value.trim();
+      if (!id) {
+        alert('Por favor ingresa un ID de solicitud válido');
+        return;
+      }
+      currentRequestId = id;
+      localStorage.setItem('rosetta_last_request_id', id);
+      document.getElementById('portal-form-card').style.display = 'none';
+      document.getElementById('portal-status-card').style.display = 'block';
+      await updateTrackerUI(id);
+      startRosettaPolling(id);
+      document.getElementById('portal-status-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    async function updateTrackerUI(id) {
+      try {
+        const res = await fetch(`${ROSETTA_API_BASE}/status/${id}`);
+        if (!res.ok) throw new Error('Solicitud no encontrada');
+        const data = await res.json();
+
+        document.getElementById('tracker-request-id').textContent = data.id.slice(0, 16) + '...';
+        document.getElementById('tracker-request-id').title = data.id;
+        document.getElementById('tracker-student-email').textContent = data.email;
+
+        // Progress bar
+        const prog = data.progress || {};
+        const pct = Math.min(100, Math.max(0, parseInt(prog.percent, 10) || 0));
+        document.getElementById('tracker-percent').textContent = pct;
+        document.getElementById('tracker-bar').style.width = `${pct}%`;
+
+        document.getElementById('tracker-headline').textContent = prog.message || 'Procesando en servidores...';
+        document.getElementById('tracker-detail').textContent = prog.detail || 'Clúster en ejecución segura.';
+        document.getElementById('tracker-unit').textContent = prog.course_unit || '-';
+
+        let countTxt = `${prog.completed || 0} / ${prog.total || 0} act.`;
+        if (prog.hours_injected > 0) countTxt += ` • ${prog.hours_injected}h`;
+        document.getElementById('tracker-count').textContent = countTxt;
+
+        // Status pill
+        const pill = document.getElementById('tracker-status-pill');
+        const pillText = document.getElementById('tracker-status-text');
+        if (data.status === 'running') {
+          pill.className = 'portal-status-pill status-running';
+          pillText.textContent = 'En Ejecución';
+        } else if (data.status === 'completed') {
+          pill.className = 'portal-status-pill status-completed';
+          pillText.textContent = '100% Completado';
+        } else if (data.status === 'failed') {
+          pill.className = 'portal-status-pill status-failed';
+          pillText.textContent = 'Error';
+        } else {
+          pill.className = 'portal-status-pill status-queued';
+          pillText.textContent = 'En Cola';
+        }
+
+        // Terminal logs
+        if (data.logs && data.logs.length > 0) {
+          const terminal = document.getElementById('tracker-log-terminal');
+          terminal.innerHTML = data.logs.map(l => `<div class="portal-log-entry">${l}</div>`).join('');
+          terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        // Completion Card & Official Email
+        const compCard = document.getElementById('portal-completion-card');
+        if (data.status === 'completed' && data.email_draft) {
+          compCard.style.display = 'block';
+          const draft = data.email_draft;
+          document.getElementById('email-to-val').textContent = draft.to + (draft.cc ? ` (CC: ${draft.cc})` : '');
+          document.getElementById('email-subject-val').textContent = draft.subject;
+          document.getElementById('email-body-val').value = draft.body;
+          document.getElementById('email-open-mailto').href = draft.mailtoLink || '#';
+
+          const waBtn = document.getElementById('email-confirm-wa');
+          const waMsg = encodeURIComponent(`Hola, acabo de culminar mi curso de Rosetta Stone al 100% en la plataforma. Mi correo es ${data.email} y mi ID de solicitud es ${data.id}.`);
+          waBtn.href = `https://wa.me/593984343514?text=${waMsg}`;
+
+          stopRosettaPolling();
+        } else {
+          compCard.style.display = 'none';
+        }
+
+        if (data.status === 'failed') {
+          stopRosettaPolling();
+        }
+
+      } catch (err) {
+        console.error('[Tracker Error]', err);
+      }
+    }
+
+    function startRosettaPolling(id) {
+      stopRosettaPolling();
+      rosettaPollInterval = setInterval(() => updateTrackerUI(id), 3200);
+    }
+
+    function stopRosettaPolling() {
+      if (rosettaPollInterval) {
+        clearInterval(rosettaPollInterval);
+        rosettaPollInterval = null;
+      }
+    }
+
+    // Auto-load last request ID if available
+    window.addEventListener('DOMContentLoaded', () => {
+      const lastId = localStorage.getItem('rosetta_last_request_id');
+      if (lastId) {
+        const inp = document.getElementById('portal-lookup-input');
+        if (inp) inp.value = lastId;
+      }
+    });
   </script>
 </body>
 </html>
