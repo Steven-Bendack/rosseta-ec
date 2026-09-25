@@ -1880,6 +1880,32 @@
     .portal-payment-body {
       padding: 0 0.2rem;
     }
+    .portal-bank-box {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .portal-bank-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .portal-bank-label {
+      color: #94a3b8;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .portal-bank-val {
+      color: #ffffff;
+      font-size: 0.85rem;
+    }
     .portal-ig-link {
       display: flex;
       align-items: center;
@@ -2150,22 +2176,48 @@
             <div class="portal-payment-header">
               <span style="font-size: 1.5rem;">💳</span>
               <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #ffffff; font-weight: 700;">Información de Pago</h4>
-                <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">Tu solicitud será revisada y aprobada tras confirmar el pago</p>
+                <h4 style="margin: 0; font-size: 1rem; color: #ffffff; font-weight: 700;">Datos para Transferencia Bancaria</h4>
+                <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">Realiza el pago para activar la resolución automática de tu curso</p>
               </div>
             </div>
+
+            <!-- CUADRO DE DATOS BANCARIOS -->
+            <div class="portal-bank-box">
+              <div class="portal-bank-row">
+                <span class="portal-bank-label">Banco:</span>
+                <span class="portal-bank-val" style="font-weight: 700; color: #fde047;">Banco Pichincha</span>
+              </div>
+              <div class="portal-bank-row">
+                <span class="portal-bank-label">Tipo de Cuenta:</span>
+                <span class="portal-bank-val">Ahorros</span>
+              </div>
+              <div class="portal-bank-row" style="background: rgba(251, 191, 36, 0.1); padding: 0.5rem 0.75rem; border-radius: 10px; border: 1px dashed rgba(251, 191, 36, 0.4);">
+                <div>
+                  <span class="portal-bank-label" style="display: block; font-size: 0.75rem; color: #fbbf24;">Número de Cuenta:</span>
+                  <div class="portal-bank-val" style="font-family: monospace; font-size: 1.15rem; font-weight: 800; color: #ffffff; letter-spacing: 0.05em;">2212487071</div>
+                </div>
+                <button type="button" class="portal-copy-btn" onclick="copyBankAcc()" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; background: rgba(251, 191, 36, 0.2); border: 1px solid rgba(251, 191, 36, 0.4); color: #fbbf24; border-radius: 8px; cursor: pointer;" title="Copiar número">
+                  📋 Copiar
+                </button>
+              </div>
+              <div class="portal-bank-row">
+                <span class="portal-bank-label">Beneficiario:</span>
+                <span class="portal-bank-val" style="font-weight: 700; color: #ffffff;">Daisy Dayana Macías Zambrano</span>
+              </div>
+            </div>
+
             <div class="portal-payment-body">
               <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; margin: 0 0 0.8rem 0;">
-                📌 <strong>Paso 1:</strong> Envía tu comprobante de transferencia por Instagram<br>
-                📌 <strong>Paso 2:</strong> Llena este formulario con tus credenciales<br>
-                📌 <strong>Paso 3:</strong> Un administrador aprobará tu solicitud y el proceso se ejecutará automáticamente
+                📌 <strong>Paso 1:</strong> Transfiere a la cuenta de ahorros arriba indicada.<br>
+                📌 <strong>Paso 2:</strong> Envía tu comprobante de pago por Instagram a <strong>@mineralstudio.ec</strong> para validación.<br>
+                📌 <strong>Paso 3:</strong> Ingresa tus credenciales abajo y envía tu solicitud para que sea aprobada.
               </p>
               <a href="https://www.instagram.com/mineralstudio.ec/" target="_blank" rel="noopener" class="portal-ig-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                <span>@mineralstudio.ec — Contactar por Instagram</span>
+                <span>@mineralstudio.ec — Enviar Comprobante por Instagram</span>
               </a>
               <p style="font-size: 0.75rem; color: #64748b; margin: 0.5rem 0 0 0; text-align: center;">
-                Escríbenos por DM con el servicio que necesitas para coordinar el pago y la activación.
+                También puedes confirmar al WhatsApp oficial (+593 98 434 3514)
               </p>
             </div>
           </div>
@@ -2717,6 +2769,12 @@
         inp.type = 'password';
         lbl.textContent = 'Ver';
       }
+    }
+
+    function copyBankAcc() {
+      navigator.clipboard.writeText('2212487071').then(() => {
+        alert('✓ Número de cuenta copiado: 2212487071 (Banco Pichincha - Ahorros)');
+      });
     }
 
     function copyRequestId() {
