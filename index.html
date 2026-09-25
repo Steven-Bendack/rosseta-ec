@@ -1364,7 +1364,7 @@
       }
     }
 
-    /* ─── PORTAL DE ACREDITACIÓN EN VIVO (UTM STYLE) ─── */
+    /* ─── PORTAL DE ACREDITACIÓN EN VIVO ─── */
     .portal-section {
       background: linear-gradient(180deg, #090e17 0%, #0c1524 50%, #070b12 100%);
       color: #f1f5f9;
@@ -1930,7 +1930,7 @@
           Resolvemos tu curso de <span class="highlight-blue">Rosetta Stone</span> por ti
         </h2>
         <p class="hero-desc">
-          Somos un grupo independiente de apoyo entre universitarios de la ULEAM y UTM. Hacemos todas tus tareas, horas de plataforma y evaluaciones nivel por nivel en tiempo récord. Tú solo envías tu reporte y pasas seguro.
+          Somos un grupo independiente de apoyo entre universitarios de la ULEAM. Hacemos todas tus tareas, horas de plataforma y evaluaciones nivel por nivel en tiempo récord. Tú solo envías tu reporte y pasas seguro.
         </p>
 
         <div class="hero-actions">
@@ -1976,7 +1976,7 @@
   </section>
 
   <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- ── SECCIÓN PORTAL DE ACREDITACIÓN & SIMULADOR EN VIVO (UTM STYLE) ── -->
+  <!-- ── SECCIÓN PORTAL DE ACREDITACIÓN & SIMULADOR EN VIVO ── -->
   <!-- ═════════════════════════════════════════════════════════════════════ -->
   <section id="portal-acreditacion" class="portal-section">
     <div class="portal-glow-bg"></div>
@@ -2051,8 +2051,7 @@
               <label class="portal-label">Universidad / Institución <span>*</span></label>
               <select id="portal-university" class="portal-input" style="cursor: pointer;">
                 <option value="uleam" selected>ULEAM — Univ. Laica Eloy Alfaro de Manabí</option>
-                <option value="utm">UTM — Univ. Técnica de Manabí</option>
-                <option value="general">Otra Institución Académica</option>
+                <option value="general">Otra Facultad / Extensión ULEAM</option>
               </select>
             </div>
 
@@ -2066,7 +2065,7 @@
           <!-- CORREO INSTITUCIONAL -->
           <div class="portal-form-group">
             <label class="portal-label">Correo Institucional Rosetta Stone <span>*</span></label>
-            <input type="email" id="portal-email" required class="portal-input" placeholder="ejemplo@live.uleam.edu.ec o @utm.edu.ec">
+            <input type="email" id="portal-email" required class="portal-input" placeholder="ejemplo@live.uleam.edu.ec">
             <p class="portal-help-text">El correo registrado en tu cuenta de Rosetta Stone.</p>
           </div>
 
@@ -2613,7 +2612,7 @@
     // ═════════════════════════════════════════════════════════════
     // CLIENT LOGIC FOR ROSETTA SOLVER & LIVE TRACKER
     // ═════════════════════════════════════════════════════════════
-    const ROSETTA_API_BASE = 'http://185.193.17.31:4700/api';
+    const ROSETTA_API_BASE = 'https://185-193-17-31.sslip.io/rosetta-api';
     let rosettaPollInterval = null;
     let currentRequestId = null;
 
