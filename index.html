@@ -620,6 +620,242 @@
       margin-top: 0.15rem;
     }
 
+    
+    /* ── EVIDENCIAS Y PRUEBAS REALES ── */
+    .trust-evidence-block {
+      margin-top: 4.5rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid #e0f2fe;
+    }
+
+    .evidence-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .evidence-badge-tag {
+      background: #eff6ff;
+      color: var(--rosetta-blue);
+      border: 1px solid #bfdbfe;
+      padding: 0.35rem 0.95rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .evidence-head h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--rosetta-navy);
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .evidence-head p {
+      color: var(--text-gray);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .evidence-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .evidence-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 119, 200, 0.12);
+      border-color: #93c5fd;
+    }
+
+    .evidence-img-wrap {
+      position: relative;
+      background: #0f172a;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 260px;
+    }
+
+    .evidence-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.35s ease;
+    }
+
+    .evidence-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    .evidence-zoom-hint {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      padding: 0.3rem 0.65rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .evidence-content {
+      padding: 1.25rem 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .evidence-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.45rem;
+    }
+    .evidence-tag-official { color: #16a34a; }
+    .evidence-tag-whatsapp { color: #0284c7; }
+    .evidence-tag-student { color: #8b5cf6; }
+
+    .evidence-content h5 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--rosetta-navy);
+      line-height: 1.35;
+      margin-bottom: 0.4rem;
+    }
+
+    .evidence-content p {
+      font-size: 0.86rem;
+      color: var(--text-gray);
+      line-height: 1.5;
+      margin-bottom: 0.85rem;
+      flex-grow: 1;
+    }
+
+    .btn-view-evidence {
+      background: #f1f5f9;
+      color: var(--rosetta-navy);
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-view-evidence:hover {
+      background: var(--rosetta-blue);
+      color: #ffffff;
+    }
+
+    /* Modal / Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 15, 26, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 100000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 92vw;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 82vh;
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-top: 0.85rem;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -2.75rem;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #ffffff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
     /* ── SECCIÓN INSTAGRAM ── */
     .instagram-section {
       background: #ffffff;
@@ -1518,6 +1754,81 @@
           </a>
         </div>
       </div>
+      <!-- Bloque de Evidencias Reales de Aprobación -->
+      <div class="trust-evidence-block">
+        <div class="evidence-head">
+          <div class="evidence-badge-tag">Evidencias Reales ULEAM</div>
+          <h4>Comprobantes y Testimonios de Estudiantes</h4>
+          <p>Mira las respuestas oficiales enviadas a los correos institucionales de estudiantes a quienes ya les resolvimos y aprobamos sus niveles.</p>
+        </div>
+
+        <div class="evidence-grid">
+          <!-- Evidencia 1 -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap" onclick="openLightbox('evidencia-uleam-b1-aprobado.png', 'Correo Oficial ULEAM: ¡Felicitaciones! Plan de Estudios Rosetta Stone Finalizado al 100% y Caso Resuelto')">
+              <img src="evidencia-uleam-b1-aprobado.png" alt="Confirmación oficial de finalización B1 ULEAM" loading="lazy">
+              <span class="evidence-zoom-hint">🔍 Ampliar</span>
+            </div>
+            <div class="evidence-content">
+              <div class="evidence-tag evidence-tag-official">✓ Correo Oficial ULEAM</div>
+              <h5>Aprobación Completa Nivel B1</h5>
+              <p>Notificación oficial de ULEAM / CognosOnline confirmando que se completaron todos los módulos y el caso pasa a <strong>RESUELTO</strong> para entrega de certificado.</p>
+              <button type="button" class="btn-view-evidence" onclick="openLightbox('evidencia-uleam-b1-aprobado.png', 'Correo Oficial ULEAM: ¡Felicitaciones! Plan de Estudios Rosetta Stone Finalizado al 100% y Caso Resuelto')">
+                Ver Correo Completo
+              </button>
+            </div>
+          </div>
+
+          <!-- Evidencia 2 -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap" onclick="openLightbox('evidencia-whatsapp-b1-agradecimiento.png', 'Chat de WhatsApp: Estudiante agradeciendo la ayuda tras recibir el correo de aprobación oficial')">
+              <img src="evidencia-whatsapp-b1-agradecimiento.png" alt="Testimonio WhatsApp estudiante B1 aprobado" loading="lazy">
+              <span class="evidence-zoom-hint">🔍 Ampliar</span>
+            </div>
+            <div class="evidence-content">
+              <div class="evidence-tag evidence-tag-whatsapp">💬 Chat WhatsApp Verificado</div>
+              <h5>«Muchas gracias por su ayuda»</h5>
+              <p>Estudiante confirmando por chat la recepción inmediata del reporte con todos los módulos en verde y agradeciendo el servicio brindado.</p>
+              <button type="button" class="btn-view-evidence" onclick="openLightbox('evidencia-whatsapp-b1-agradecimiento.png', 'Chat de WhatsApp: Estudiante agradeciendo la ayuda tras recibir el correo de aprobación oficial')">
+                Ver Conversación
+              </button>
+            </div>
+          </div>
+
+          <!-- Evidencia 3 -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap" onclick="openLightbox('evidencia-whatsapp-curso-completo.png', 'Chat de WhatsApp: «Hola, ya me respondieron, el curso está completo, muchas gracias»')">
+              <img src="evidencia-whatsapp-curso-completo.png" alt="Estudiante confirma curso completado al 100%" loading="lazy">
+              <span class="evidence-zoom-hint">🔍 Ampliar</span>
+            </div>
+            <div class="evidence-content">
+              <div class="evidence-tag evidence-tag-student">⭐ Testimonio de Alumno</div>
+              <h5>«El curso está completo, gracias»</h5>
+              <p>Respuesta directa del estudiante una vez que el centro de idiomas revisó su cuenta oficial y validó el cumplimiento total.</p>
+              <button type="button" class="btn-view-evidence" onclick="openLightbox('evidencia-whatsapp-curso-completo.png', 'Chat de WhatsApp: «Hola, ya me respondieron, el curso está completo, muchas gracias»')">
+                Ver Testimonio
+              </button>
+            </div>
+          </div>
+
+          <!-- Evidencia 4 -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap" onclick="openLightbox('evidencia-whatsapp-a2-aprobado.png', 'Notificación Oficial: Nivel A2 completado y habilitación del siguiente nivel B1')">
+              <img src="evidencia-whatsapp-a2-aprobado.png" alt="Confirmación oficial de nivel A2 completado" loading="lazy">
+              <span class="evidence-zoom-hint">🔍 Ampliar</span>
+            </div>
+            <div class="evidence-content">
+              <div class="evidence-tag evidence-tag-official">✓ Promoción de Nivel</div>
+              <h5>Habilitación de A2 a B1</h5>
+              <p>«Amigo ya me llegó el correo... quiere decir que completó el nivel A2, por lo tanto, se habilita el siguiente nivel B1».</p>
+              <button type="button" class="btn-view-evidence" onclick="openLightbox('evidencia-whatsapp-a2-aprobado.png', 'Notificación Oficial: Nivel A2 completado y habilitación del siguiente nivel B1')">
+                Ver Notificación
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1865,5 +2176,39 @@
       });
     }
   </script>
+
+  <!-- LIGHTBOX MODAL PARA EVIDENCIAS -->
+  <div id="lightboxModal" class="lightbox-overlay" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" onclick="closeLightbox(event)" aria-label="Cerrar">✕</button>
+      <img id="lightboxImg" class="lightbox-img" src="" alt="Evidencia ampliada">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      img.src = src;
+      cap.textContent = caption;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightboxModal' || e.target.classList.contains('lightbox-close') || e.type === 'keydown') {
+        const modal = document.getElementById('lightboxModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox(e);
+    });
+  </script>
+
 </body>
 </html>
